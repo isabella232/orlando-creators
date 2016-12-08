@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import CardList from '../components/CardList';
 
-const data = require('../data/creators.json');
+import creators from '../data/creators.json';
 
 export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      creators: data,
+      creators: creators,
     };
   }
   render() {

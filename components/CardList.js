@@ -22,11 +22,14 @@ const styles = {
   root: {
     display: 'flex',
     flexWrap: 'wrap',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    maxWidth: '1080px',
   },
   col: {
     padding: '16px',
     marginBottom: '1.5em',
-    '@media (width >= 450px)': {
+    '@media (min-width: 450px)': {
       width: '50%',
     },
   },
@@ -45,14 +48,15 @@ const styles = {
     textAlign: 'center',
     textDecoration: 'none',
     ':hover .thumb': {
-      ':img': {
+      boxShadow: `0 4px 12px ${colors.blue}`,
+      img: {
         transform: 'translate(-50%, -50%) scale(1.2)',
       },
     },
   },
   thumb: {
     background: `${colors.blueSS}`,
-    borderRadius: '4px',
+    borderRadius: '6px',
     marginBottom: '1em',
     overflow: 'hidden',
     paddingTop: '56.25%',
@@ -91,23 +95,21 @@ export default class extends Component {
       <div className={style(styles.root)}>
         {this.props.cards.map((creator, key) => (
           <div key={key} className={style(styles.col)}>
-            <Link
-              id={`video-${creator.slug}`}
-              className={style(styles.link)}
-              href={`/creator/${creator.slug}.html`}
-            >
-              <div
-                className={style(styles.thumb)}
-                style={{ backgroundColor: creator.color || undefined }}
-              >
-                <img
-                  className={style(styles.img)}
-                  src={`/static/assets/${creator.slug}.svg`}
-                  alt={creator.name}
-                />
-              </div>
-              <h2 className={style(styles.title)}>{creator.name}</h2>
-              <h3 className={style(styles.subtitle)}>{creator.title}</h3>
+            <Link href={`/creator/${creator.slug}`}>
+              <a className={style(styles.link)}>
+                <div
+                  className={style(styles.thumb)}
+                  style={{ backgroundColor: creator.color || undefined }}
+                >
+                  <img
+                    className={style(styles.img)}
+                    src={`/static/assets/${creator.slug}.svg`}
+                    alt={creator.name}
+                  />
+                </div>
+                <h2 className={style(styles.title)}>{creator.name}</h2>
+                <h3 className={style(styles.subtitle)}>{creator.title}</h3>
+              </a>
             </Link>
           </div>
         ))}
