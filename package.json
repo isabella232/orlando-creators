@@ -12,15 +12,16 @@
   "author": "drew@pow.rs",
   "license": "ISC",
   "dependencies": {
-    "next": "^1.2.3",
-    "react": "^15.4.1"
+    "next": "^1.2",
+    "react": "^15.4",
+    "react-sticky": "^5.0"
   },
   "devDependencies": {
-    "eslint": "^3.11.1",
-    "eslint-config-airbnb": "^13.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.8.0"
+    "eslint": "^3.11",
+    "eslint-config-airbnb": "^13.0",
+    "eslint-plugin-import": "^2.2",
+    "eslint-plugin-jsx-a11y": "^2.2",
+    "eslint-plugin-react": "^6.8"
   },
   "repository": {
     "type": "git",

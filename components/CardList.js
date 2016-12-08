@@ -22,6 +22,7 @@ const styles = {
   root: {
     display: 'flex',
     flexWrap: 'wrap',
+    marginBottom: '4em',
     marginLeft: 'auto',
     marginRight: 'auto',
     maxWidth: '1080px',

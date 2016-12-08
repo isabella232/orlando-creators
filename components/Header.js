@@ -8,13 +8,14 @@ import Link from 'next/link';
 
 const styles = {
   root: {
-    marginTop: '24px',
-    marginBottom: '24px',
+    paddingTop: '24px',
+    paddingBottom: '24px',
+    overflow: 'hidden',
   },
   logo: {
     height: '64px',
     width: 'auto',
-    '@media (width >= 450px)': {
+    '@media (width >= 600px)': {
       height: '80px',
     },
   },

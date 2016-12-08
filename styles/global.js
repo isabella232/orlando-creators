@@ -9,23 +9,38 @@ export default `
   box-sizing: border-box;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 html {
-  background-color: ${colors.blueTT};
+  background-color: ${colors.black};
   font-family: ${typography.text};
   font-feature-settings: common-ligatures;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.5;
+  min-height: 100vh;
+}
+
+main {
+  background-color: ${colors.blueTT};
+}
+
+h1 {
+  color: ${colors.blueSS};
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 p {
-  font-size: 18px;
-  line-height: 2;
+  font-size: 20px;
+  line-height: 1.8;
   margin-bottom: 2em;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 2em;
-  max-width: 37em;
 }
 
 @font-face {
