@@ -1,0 +1,10 @@
+/**
+ * Row
+ *
+ * Styles for color blocks
+ */
+
+:local(.row) {
+  display: block;
+  overflow: hidden;
+}
