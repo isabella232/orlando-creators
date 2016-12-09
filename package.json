@@ -6,12 +6,20 @@
   "scripts": {
     "build": "next build",
     "dev": "webpack --watch | next",
-    "start": "next start",
+    "postinstall": "heroku-nextjs-build",
+    "start": "next start -p $PORT",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "7.2.1"
+  },
+  "cacheDirectories": [
+    "nextjs/node_modules"
+  ],
   "author": "drew@pow.rs",
   "license": "ISC",
   "dependencies": {
+    "@mars/heroku-nextjs-build": "^1.0.1",
     "next": "^1.2",
     "react": "^15.4",
     "react-sticky": "^5.0"
