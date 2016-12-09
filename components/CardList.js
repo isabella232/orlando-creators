@@ -30,7 +30,7 @@ const styles = {
   col: {
     padding: '16px',
     marginBottom: '1.5em',
-    '@media (min-width: 450px)': {
+    '@media (min-width: 600px)': {
       width: '50%',
     },
   },
