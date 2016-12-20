@@ -27,7 +27,7 @@ style.logo = css({
   },
 });
 style.link = css({
-  color: `${colors.black}`,
+  color: `${colors.blueSS}`,
   display: 'block',
   fontSize: '14px',
   fontWeight: 700,

@@ -23,10 +23,11 @@ const style = {};
 style.root = css({
   display: 'flex',
   flexWrap: 'wrap',
-  marginBottom: '4em',
   marginLeft: 'auto',
   marginRight: 'auto',
   maxWidth: '1080px',
+  paddingLeft: '16px',
+  paddingRight: '16px',
 });
 style.col = css({
   marginBottom: '1.5em',
@@ -44,6 +45,8 @@ style.container = css({
   paddingTop: '56.25%',
   position: 'relative',
   transition: `opacity 200ms, box-shadow 200ms ${animation.standard}, transform 100ms ${animation.deceleration}`,
+  userSelect: 'none',
+  zIndex: 10,
 });
 style.containerInnerStatic = css({
   borderRadius: '6px',
@@ -89,6 +92,36 @@ style.containerInnerDynamic = css({
     width: '62.5%',
     zIndex: 5,
   }
+});
+style.containerComingSoon = css({
+  backgroundColor: 'rgba(0,80,102,0.1)',
+  borderRadius: '8px',
+  height: 0,
+  overflow: 'hidden',
+  paddingTop: '56.25%',
+  position: 'relative',
+  userSelect: 'none',
+  ' div': {
+    fontSize: '0.875em',
+    fontWeight: 700,
+    left: '50%',
+    letterSpacing: '0.125em',
+    opacity: 0.625,
+    position: 'absolute',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    top: '50%',
+    transform: 'translate(-50%, -50%)',
+  },
+  ' img': {
+    display: 'block',
+    height: '3em',
+    opacity: 0.5,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: '0.5em',
+    width: '3em',
+  },
 });
 style.icon = css({
   bottom: 0,
@@ -199,6 +232,14 @@ export default class extends Component {
             </Link>
           </div>
         ))}
+        <div className={style.col}>
+          <div className={style.containerComingSoon}>
+            <div>
+              <img src="/static/assets/alarm.svg" />
+              Coming soon!
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

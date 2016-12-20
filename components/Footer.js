@@ -8,28 +8,26 @@ import colors from '../styles/colors';
 
 const style = {};
 
-style.bg = css({
-  backgroundImage: 'url(/static/assets/orlando.svg)',
-  backgroundSize: 'auto 100%',
-  backgroundPosition: 'center bottom',
-  height: '300px',
-  marginTop: '-4em',
-  pointerEvents: 'none',
+style.root = css({
+  backgroundColor: colors.black,
+  marginTop: '6em',
 });
 style.colophon = css({
-  backgroundColor: `${colors.black}`,
   color: 'white',
-  fontSize: '16px',
+  fontSize: '14px',
   fontWeight: 900,
   letterSpacing: '0.0625em',
+  lineHeight: 2,
   paddingBottom: '1em',
   paddingTop: '1em',
+  position: 'relative',
   textAlign: 'center',
   textTransform: 'uppercase',
+  zIndex: 10,
 });
 
 export default () => (
-  <footer>
+  <footer className={style.root}>
     <div className={style.bg} />
     <div className={style.colophon}>
       Made with 🍊  by <a href="http://madewithenvy.com/" target="_blank">Envy</a> and <a href="http://macbethstudio.com/" target="_blank">Macbeth Studio</a>

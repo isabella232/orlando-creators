@@ -23,9 +23,7 @@ export default class extends Component {
     return (
       <StickyContainer>
         <Cell size="l">
-          <Sticky>
-            <Video src={`https://www.youtube.com/embed/${this.props.creator.videoID}`} />
-          </Sticky>
+          <Video src={`https://www.youtube.com/embed/${this.props.creator.videoID}`} />
         </Cell>
         <Cell>
           <div className={style.card}>

@@ -10,18 +10,27 @@ export default `
 }
 
 html, body {
+  height: 100vh;
   margin: 0;
+  overflow: hidden;
   padding: 0;
 }
 
 html {
   background-color: ${colors.black};
+  color: ${colors.blueSS};
   font-family: ${typography.text};
   font-feature-settings: common-ligatures;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.5;
-  min-height: 100vh;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  perspective: 100px;
+  transform-style: preserve-3d;
 }
 
 a {
@@ -30,7 +39,10 @@ a {
 }
 
 main {
-  background-color: ${colors.blueTT};
+  margin: 0;
+  min-height: 30em;
+  position: relative;
+  zIndex: 10;
 }
 
 h1 {
@@ -64,12 +76,12 @@ p {
   font-family: "Kabel Neue";
   font-style: normal;
   font-weight: 700;
-  src: url('/static/fonts/kabel-neue-700.woff');
+  src: url('/static/fonts/kabel-neue-600.woff');
 }
 @font-face {
   font-family: "Kabel Neue";
   font-style: italic;
   font-weight: 700;
-  src: url('/static/fonts/kabel-neue-700italic.woff');
+  src: url('/static/fonts/kabel-neue-600italic.woff');
 }
 `;
