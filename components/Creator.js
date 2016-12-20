@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import style from 'next/css';
+import { css } from 'glamor';
 import { StickyContainer, Sticky } from 'react-sticky';
 
 import colors from '../styles/colors';
 import Cell from './Cell';
 import Video from './Video';
 
-const styles = {
-  card: {
-    backgroundColor: 'white',
-    borderRadius: '8px',
-    boxShadow: `0 8px 48px rgba(0, 80, 102, 0.2)`,
-    padding: '64px',
-  },
-  sticky: {
-    maxWidth: '640px',
-  },
-};
+const style = {};
+
+style.card = css({
+  backgroundColor: 'white',
+  borderRadius: '8px',
+  boxShadow: `0 8px 48px rgba(0, 80, 102, 0.2)`,
+  padding: '64px',
+});
+style.sticky = css({
+  maxWidth: '640px',
+});
 
 export default class extends Component {
   render() {
@@ -28,7 +28,7 @@ export default class extends Component {
           </Sticky>
         </Cell>
         <Cell>
-          <div className={style(styles.card)}>
+          <div className={style.card}>
             <h1>Testing Header</h1>
             <div>
               <p>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { style } from 'next/css';
 import Head from 'next/head';
 
 import Header from '../../components/Header';

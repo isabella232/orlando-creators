@@ -52,24 +52,24 @@ p {
   font-family: "Kabel Neue";
   font-style: normal;
   font-weight: 400;
-  src: url('/static/assets/kabel-neue-400.woff');
+  src: url('/static/fonts/kabel-neue-400.woff');
 }
 @font-face {
   font-family: "Kabel Neue";
   font-style: italic;
   font-weight: 400;
-  src: url('/static/assets/kabel-neue-400italic.woff');
+  src: url('/static/fonts/kabel-neue-400italic.woff');
 }
 @font-face {
   font-family: "Kabel Neue";
   font-style: normal;
   font-weight: 700;
-  src: url('/static/assets/kabel-neue-700.woff');
+  src: url('/static/fonts/kabel-neue-700.woff');
 }
 @font-face {
   font-family: "Kabel Neue";
   font-style: italic;
   font-weight: 700;
-  src: url('/static/assets/kabel-neue-700italic.woff');
+  src: url('/static/fonts/kabel-neue-700italic.woff');
 }
 `;

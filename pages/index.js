@@ -1,5 +1,4 @@
 import React from 'react';
-import { style } from 'next/css';
 import reset from 'glamor/reset';
 import Head from 'next/head';
 
@@ -20,6 +19,7 @@ export default class extends React.Component {
         <main rel="main">
           <Head>
             <style>{Global}</style>
+            <link rel="favicon" href="/static/favicon.ico" />
           </Head>
           <Header />
           <CreatorsList />
