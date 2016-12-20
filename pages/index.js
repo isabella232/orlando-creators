@@ -1,5 +1,6 @@
 import React from 'react';
 import { style } from 'next/css';
+import reset from 'glamor/reset';
 import Head from 'next/head';
 
 import Header from '../components/Header';

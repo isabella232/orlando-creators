@@ -11,7 +11,10 @@ const styles = {
     marginLeft: 'auto',
     marginRight: 'auto',
     maxWidth: '1080px',
-  }
+    '@media screen and (min-width: 600px)': {
+      maxWidth: '1200px',
+    },
+  },
 };
 
 export default class extends Component {

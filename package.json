@@ -20,16 +20,18 @@
   "license": "ISC",
   "dependencies": {
     "@mars/heroku-nextjs-build": "^1.0.1",
-    "next": "^1.2",
+    "next": "^1.2.3",
     "react": "^15.4",
     "react-sticky": "^5.0"
   },
   "devDependencies": {
-    "eslint": "^3.11",
+    "eslint": "^3.12.2",
     "eslint-config-airbnb": "^13.0",
     "eslint-plugin-import": "^2.2",
     "eslint-plugin-jsx-a11y": "^2.2",
-    "eslint-plugin-react": "^6.8"
+    "eslint-plugin-react": "^6.8",
+    "glamor": "^2.20.12",
+    "webpack": "beta"
   },
   "repository": {
     "type": "git",
