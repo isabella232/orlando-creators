@@ -29,9 +29,10 @@ style.root = css({
   maxWidth: '1080px',
 });
 style.col = css({
-  padding: '16px',
   marginBottom: '1.5em',
-  '@media (min-width: 600px)': {
+  padding: '16px',
+  width: '100%',
+  '@media(min-width: 600px)': {
     width: '50%',
   },
 });
@@ -54,6 +55,18 @@ style.containerInnerStatic = css({
   transition: 'opacity 200ms',
   width: '100%',
   zIndex: 10,
+  '::before': {
+    backgroundColor: `${colors.blueSS}`,
+    borderRadius: '50%',
+    bottom: '0',
+    content: '""',
+    height: '75%',
+    left: '0',
+    position: 'absolute',
+    transform: 'translate(-50%, 62.5%)',
+    width: '62.5%',
+    zIndex: 10,
+  }
 });
 style.containerInnerDynamic = css({
   borderRadius: '6px',
@@ -64,6 +77,18 @@ style.containerInnerDynamic = css({
   top: 0,
   width: '100%',
   zIndex: 5,
+  '::before': {
+    backgroundColor: `${colors.blueSS}`,
+    borderRadius: '50%',
+    bottom: '0',
+    content: '""',
+    height: '75%',
+    left: '0',
+    position: 'absolute',
+    transform: 'translate(-50%, 62.5%)',
+    width: '62.5%',
+    zIndex: 5,
+  }
 });
 style.icon = css({
   bottom: 0,
@@ -74,6 +99,7 @@ style.icon = css({
   position: 'absolute',
   transition: `transform 4s ${animation.deceleration}`,
   width: 'auto',
+  zIndex: 10,
 });
 style.play = css({
   height: '2.5em',
@@ -91,10 +117,10 @@ style.link = css({
   display: 'block',
   textAlign: 'center',
   textDecoration: 'none',
-  [`:hover .${style.containerInnerStatic}, :focus .${style.containerInnerStatic}`]: {
+  [`:hover .${style.containerInnerStatic},:focus .${style.containerInnerStatic}`]: {
     opacity: 0,
   },
-  [`:hover .${style.play}, :focus .${style.play}`]: {
+  [`:hover .${style.play},:focus .${style.play}`]: {
     opacity: 1,
   },
 });

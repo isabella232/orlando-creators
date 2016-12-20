@@ -24,6 +24,11 @@ html {
   min-height: 100vh;
 }
 
+a {
+  color: #0ba7c7;
+  text-decoration: none;
+}
+
 main {
   background-color: ${colors.blueTT};
 }

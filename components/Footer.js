@@ -32,7 +32,7 @@ export default () => (
   <footer className={style(styles.root)}>
     <div className={style(styles.bg)} />
     <div className={style(styles.colophon)}>
-      Made with <code>&lt;3</code> by <a href="http://madewithenvy.com/">Envy</a>
+      Made with 🍊  by <a href="http://madewithenvy.com/" target="_blank">Envy</a> and <a href="http://macbethstudio.com/" target="_blank">Macbeth Studio</a>
     </div>
   </footer>
 );

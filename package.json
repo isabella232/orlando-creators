@@ -20,8 +20,10 @@
   "license": "ISC",
   "dependencies": {
     "@mars/heroku-nextjs-build": "^1.0.1",
+    "glob": "*",
     "next": "^1.2.3",
     "react": "^15.4",
+    "react-dom": "^15.4.1",
     "react-sticky": "^5.0"
   },
   "devDependencies": {
@@ -30,8 +32,7 @@
     "eslint-plugin-import": "^2.2",
     "eslint-plugin-jsx-a11y": "^2.2",
     "eslint-plugin-react": "^6.8",
-    "glamor": "^2.20.12",
-    "webpack": "beta"
+    "glamor": "^2.20.12"
   },
   "repository": {
     "type": "git",
