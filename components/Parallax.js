@@ -33,7 +33,7 @@ style.bg = css({
   position: 'fixed',
   right: 0,
   top: 0,
-  transform: 'translate3D(0, 0%, -100px) scale(2)',
+  transform: 'translate3D(0, -100%, -100px) scale(2)',
   zIndex: 1,
 });
 
@@ -46,16 +46,19 @@ export default class extends Component {
     super(props);
     this.state = { top: '0px' };
   }
+  setTop() {
+    this.setState({ top: `${this.refs.overlay.clientHeight}px` });
+  }
   handleResize(e) {
-    this.setState({ top: `2 * ${window.innerHeight}px` });
+    this.setTop();
   }
   componentDidMount() {
-    this.setState({ top: `2 * ${window.innerHeight}px` });
+    this.setTop();
   }
   render() {
     return (
       <div style={{ backgroundColor: colors.blueTT }}>
-        <div className={style.overlay}>{this.props.children}</div>
+        <div ref="overlay" className={style.overlay}>{this.props.children}</div>
         <div className={style.bg} style={{ top: this.state.top }} />
       </div>
     )

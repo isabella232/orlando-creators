@@ -1409,7 +1409,7 @@ find-up@^1.0.0:
     path-exists "^2.0.0"
     pinkie-promise "^2.0.0"
 
-find-up@^2.0.0:
+find-up@^2.0.0, find-up@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/find-up/-/find-up-2.1.0.tgz#45d1b7e506c717ddd482775a2b77920a3c0c57a7"
   dependencies:
@@ -1522,6 +1522,12 @@ getpass@^0.1.1:
 glamor@2.20.8:
   version "2.20.8"
   resolved "https://registry.yarnpkg.com/glamor/-/glamor-2.20.8.tgz#81f55ed8cca7b7a8a38d9d66cbb5291562bd9438"
+  dependencies:
+    fbjs "^0.8.6"
+
+glamor@^2.20.12:
+  version "2.20.12"
+  resolved "https://registry.yarnpkg.com/glamor/-/glamor-2.20.12.tgz#f59bd96a87e57447b7c1eb3d69bceca1ab7127b8"
   dependencies:
     fbjs "^0.8.6"
 

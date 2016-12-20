@@ -40,7 +40,7 @@ a {
 
 main {
   margin: 0;
-  min-height: 30em;
+  min-height: 50vh;
   position: relative;
   zIndex: 10;
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { css } from 'glamor';
-import { StickyContainer, Sticky } from 'react-sticky';
 
 import colors from '../styles/colors';
 import Cell from './Cell';
