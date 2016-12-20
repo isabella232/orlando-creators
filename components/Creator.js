@@ -20,7 +20,7 @@ style.sticky = css({
 export default class extends Component {
   render() {
     return (
-      <StickyContainer>
+      <div>
         <Cell size="l">
           <Video src={`https://www.youtube.com/embed/${this.props.creator.videoID}`} />
         </Cell>
@@ -76,7 +76,7 @@ export default class extends Component {
             </div>
           </div>
         </Cell>
-      </StickyContainer>
+      </div>
     );
   }
 }
