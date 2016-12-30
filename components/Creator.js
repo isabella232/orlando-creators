@@ -1,31 +1,37 @@
-import React, { Component } from 'react';
-import { css } from 'glamor';
+/**
+ * Individual creator page
+ */
 
-import colors from '../styles/colors';
+import React, { Component } from 'react';
+import styled from 'styled-components';
+
 import Cell from './Cell';
 import Video from './Video';
 
-const style = {};
+/**
+ * @section Styles
+ */
 
-style.card = css({
-  backgroundColor: 'white',
-  borderRadius: '8px',
-  boxShadow: `0 8px 48px rgba(0, 80, 102, 0.2)`,
-  padding: '64px',
-});
-style.sticky = css({
-  maxWidth: '640px',
-});
+const Card = styled.div`
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 48px rgba(0, 80, 102, 0.2);
+  padding: 64px;
+`;
+
+/**
+ * @section Template
+ */
 
 export default class extends Component {
   render() {
     return (
       <div>
-        <Cell size="l">
+        <Cell large>
           <Video src={`https://www.youtube.com/embed/${this.props.creator.videoID}`} />
         </Cell>
         <Cell>
-          <div className={style.card}>
+          <Card>
             <h1>Testing Header</h1>
             <div>
               <p>
@@ -74,7 +80,7 @@ export default class extends Component {
               rump chicken pig brisket landjaeger shank beef.
               </p>
             </div>
-          </div>
+          </Card>
         </Cell>
       </div>
     );

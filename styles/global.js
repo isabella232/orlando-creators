@@ -1,5 +1,4 @@
-import colors from './colors';
-import typography from './typography';
+import { color, typography } from './style-utils';
 
 export default `
 * {
@@ -9,7 +8,8 @@ export default `
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
@@ -17,8 +17,8 @@ html, body {
 }
 
 html {
-  background-color: ${colors.black};
-  color: ${colors.blueSS};
+  background-color: ${color.black};
+  color: ${color.blueSS};
   font-family: ${typography.text};
   font-feature-settings: common-ligatures;
   font-size: 18px;
@@ -46,7 +46,7 @@ main {
 }
 
 h1 {
-  color: ${colors.blueSS};
+  color: ${color.blueSS};
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 0;
@@ -58,30 +58,5 @@ p {
   line-height: 1.8;
   margin-bottom: 2em;
   margin-top: 2em;
-}
-
-@font-face {
-  font-family: "Kabel Neue";
-  font-style: normal;
-  font-weight: 400;
-  src: url('/static/fonts/kabel-neue-400.woff');
-}
-@font-face {
-  font-family: "Kabel Neue";
-  font-style: italic;
-  font-weight: 400;
-  src: url('/static/fonts/kabel-neue-400italic.woff');
-}
-@font-face {
-  font-family: "Kabel Neue";
-  font-style: normal;
-  font-weight: 700;
-  src: url('/static/fonts/kabel-neue-600.woff');
-}
-@font-face {
-  font-family: "Kabel Neue";
-  font-style: italic;
-  font-weight: 700;
-  src: url('/static/fonts/kabel-neue-600italic.woff');
 }
 `;

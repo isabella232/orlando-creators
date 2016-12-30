@@ -1,31 +1,29 @@
+/**
+ * Cell
+ *
+ * Width-limiting containers
+ */
+
 import React, { Component } from 'react';
-import { css } from 'glamor';
+import styled from 'styled-components';
 
-const style = {};
+import { media } from '../styles/style-utils';
 
-style.root = css({
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  maxWidth: '800px',
-});
-style.large = css({
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  maxWidth: '1080px',
-  '@media screen and (min-width: 600px)': {
-    maxWidth: '1200px',
-  },
-});
+/**
+ * @section Style
+ */
+
+const Cell = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${props => props.large ? '1080px' : '800px'};
+  ${media.s `
+    ${props => props.large ? 'max-width: 1200px;' : ''}
+  `}
+`;
 
 export default class extends Component {
-  constructor(props) {
-    super(props);
-    let className = this.props.size == 'l' ? 'large' : 'root';
-    this.state = {
-      styles: style[className]
-    };
-  }
   render() {
-    return <div className={this.state.styles}>{this.props.children}</div>;
+    return <Cell>{this.props.children}</Cell>;
   }
 }

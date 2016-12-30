@@ -9,33 +9,36 @@
  */
 
 import React, { Component } from 'react';
-import { css } from 'glamor';
+import styled from 'styled-components';
 
+import { color } from '../styles/style-utils';
 
 /**
  * @section Styles
  */
 
-import colors from '../styles/colors';
-const style = {};
+const Wrapper = styled.div`
+  background-color: ${color.blueTT};
+`;
 
-style.overlay = css({
-  position: 'relative',
-  zIndex: 10,
-});
-style.bg = css({
-  backgroundImage: 'url(/static/assets/orlando.svg)',
-  backgroundPosition: 'center bottom',
-  backgroundSize: '150% auto',
-  height: '100%',
-  left: 0,
-  pointerEvents: 'none',
-  position: 'fixed',
-  right: 0,
-  top: 0,
-  transform: 'translate3D(0, -100%, -100px) scale(2)',
-  zIndex: 1,
-});
+const Overlay = styled.div`
+  position: relative;
+  z-index: 10;
+`;
+
+const Background = styled.div`
+  background-image: url(/static/assets/orlando.svg);
+  background-position: center bottom;
+  background-size: 150% auto;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 100vh;
+  transform: translate3D(0, -100%, -100px) scale(2);
+  z-index: 1;
+`;
 
 /**
  * @section Component
@@ -44,12 +47,12 @@ style.bg = css({
 export default class extends Component {
   constructor(props) {
     super(props);
-    this.state = { top: '0px' };
+    this.state = { top: '100vh' };
   }
   setTop() {
-    this.setState({ top: `${this.refs.overlay.clientHeight}px` });
+    this.setState({ top: `${this.overlay.clientHeight}px` });
   }
-  handleResize(e) {
+  handleResize() {
     this.setTop();
   }
   componentDidMount() {
@@ -57,10 +60,10 @@ export default class extends Component {
   }
   render() {
     return (
-      <div style={{ backgroundColor: colors.blueTT }}>
-        <div ref="overlay" className={style.overlay}>{this.props.children}</div>
-        <div className={style.bg} style={{ top: this.state.top }} />
-      </div>
-    )
+      <Wrapper>
+        <Overlay innerRef={(overlay) => { this.overlay = overlay }}>{this.props.children}</Overlay>
+        <Background style={{ top: this.state.top }} />
+      </Wrapper>
+    );
   }
 }

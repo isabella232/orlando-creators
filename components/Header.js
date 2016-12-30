@@ -3,61 +3,70 @@
  */
 
 import React from 'react';
-import { css } from 'glamor';
+import styled from 'styled-components';
 import Link from 'next/link';
 
-import colors from '../styles/colors';
+import { color, media } from '../styles/style-utils';
 
-const style = {};
+/**
+ * @section Styles
+ */
 
-style.root = css({
-  paddingTop: '24px',
-  paddingBottom: '24px',
-  overflow: 'hidden',
-});
-style.logo = css({
-  height: '48px',
-  left: '50%',
-  position: 'absolute',
-  top: '24px',
-  transform: 'translateX(-50%)',
-  width: 'auto',
-  '@media (min-width: 600px)': {
-    height: '64px',
-  },
-});
-style.link = css({
-  color: `${colors.blueSS}`,
-  display: 'block',
-  fontSize: '14px',
-  fontWeight: 700,
-  letterSpacing: '0.0625em',
-  lineHeight: '64px',
-  textTransform: 'uppercase',
-});
-style.nav = css({
-  alignItems: 'center',
-  display: 'flex',
-  justifyContent: 'flex-end',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  paddingRight: '32px',
-  maxWidth: 'calc(100% - 64px)',
-});
+const Base = styled.div`
+  paddingTop: 24px;
+  paddingBottom: 24px;
+  overflow: hidden;
+`;
+
+const Logo = styled.img`
+  height: 48px;
+  left: 50%;
+  position: absolute;
+  top: 24px;
+  transform: translateX(-50%);
+  width: auto;
+
+  ${media.s`
+    height: 64px;
+  `}
+`;
+
+const ActiveArea = styled.div`
+  color: ${color.blueSS};
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  line-height: 64px;
+  text-transform: uppercase;
+`;
+
+const Nav = styled.nav`
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(100% - 64px);
+  padding-right: 32px;
+`;
+
+/**
+ * @section Template
+ */
 
 export default () => (
-  <div className={style.root}>
+  <Base>
     <Link href="/">
-      <img
-        className={style.logo}
+      <Logo
         src="/static/assets/orlando-creators.svg"
         alt="Orlando Creators"
       />
     </Link>
-    <nav className={style.nav}>
+    <Nav>
       <Link href="/about">
-        <a className={style.link}>About</a>
+        <ActiveArea>About</ActiveArea>
       </Link>
-    </nav>
-  </div>
+    </Nav>
+  </Base>
 );

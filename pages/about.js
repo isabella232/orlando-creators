@@ -1,15 +1,22 @@
+/**
+ * About Page
+ *
+ * More info about this ish
+ */
+
 import React from 'react';
-import { css } from 'glamor';
-import Head from 'next/head';
+import styled from 'styled-components';
 
 import Cell from '../components/Cell';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import CreatorsList from '../containers/CreatorsList';
 import Parallax from '../components/Parallax';
-import animations from '../styles/animations';
-import colors from '../styles/colors';
-import Global from '../styles/global';
+
+import { animation, color } from '../styles/style-utils';
+
+/**
+ * @section Data
+ */
 
 const people = [
   {
@@ -32,115 +39,117 @@ const people = [
   },
 ];
 
-const style = {};
+/**
+ * @section Styles
+ */
 
-style.blurb = css({
-  color: `${colors.blue}`,
-  fontSize: '28px',
-  fontWeight: 200,
-  lineHeight: 1.5,
-  marginTop: '0.5em',
-});
-style.creditTitle = css({
-  color: colors.blue,
-  fontSize: '14px',
-  fontWeight: 300,
-  letterSpacing: '0.125em',
-  marginBottom: '2em',
-  textAlign: 'center',
-  textTransform: 'uppercase',
-});
-style.flamingo = css({
-  height: '128px',
-  width: '128px',
-});
-style.header = css({
-  paddingBottom: '2em',
-  paddingTop: '2em',
-  textAlign: 'center',
-});
-style.person = css({
-  flex: 1,
-  lineHeight: 1,
-  textAlign: 'center',
-  '& img': {
-    borderRadius: '32px',
-    boxShadow: `0 16px 32px rgba(0,80,102,0)`,
-    height: '128px',
-    transition: `box-shadow 200ms,transform 200ms ${animations.standard}`,
-    width: '128px',
-  },
-  ' & h4': {
-    color: colors.blue,
-    fontSize: '1.125em',
-    marginTop: '0.5em',
-    marginBottom: 0,
-  },
-  ' & h5': {
-    color: colors.blueSS,
-    fontSize: '0.825em',
-    marginTop: '0.25em',
-    marginBottom: 0,
-  },
-  [':focus img,:hover img']: {
-    boxShadow: `0 16px 32px rgba(0,80,102,0.5)`,
-    transform: 'translateY(-20%)',
+const Description = styled.div`
+  padding-bottom: 2em,
+  padding-top: 2em,
+  text-align: center,
+`;
+
+const Blurb = styled.p`
+  color: ${color.blue};
+  font-size: 28px;
+  font-weight: 200;
+  line-height: 1.5;
+  margin-top: 0.5em;
+`;
+
+const CreditTitle = styled.h3`
+  color: ${color.blue};
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.125em;
+  margin-bottom: 2em;
+  text-align: center;
+  text-transform: uppercase;
+`;
+
+const Flamingo = styled.img`
+  height: 128px;
+  width: 128px;
+`;
+
+const Person = styled.div`
+  flex: 1;
+  line-height: 1;
+  text-align: center;
+  img {
+    borderRadius: 32px;
+    boxShadow: 0 16px 32px rgba(0,80,102,0);
+    height: 128px;
+    transition: box-shadow 200ms,transform 200ms ${animation.standard};
+    width: 128px;
   }
-});
-style.personContainer = css({
-  display: 'flex',
-  marginBottom: '5em',
-  width: '100%',
-});
-style.summary = css({
-  fontWeight: 300,
-  lineHeight: 1.5,
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  maxWidth: '30em',
-  textAlign: 'left',
-});
+  h4 {
+    color: ${color.blue};
+    font-size: 1.125em;
+    margin-top: 0.5em;
+    marginBottom: 0;
+  }
+  h5 {
+    color: ${color.blueSS};
+    font-size: 0.825em;
+    margin-top: 0.25em;
+    marginBottom: 0;
+  }
+  &:focus img,
+  &:hover img {
+    boxShadow: 0 16px 32px rgba(0,80,102,0.5);
+    transform: translateY(-20%);
+  }
+`;
+
+const PersonContainer = styled.div`
+  display: flex;
+  margin-bottom: 5em;
+  width: 100%;
+`;
+
+const Summary = styled.p`
+  font-weight: 300;
+  line-height: 1.5;
+  marginLeft: auto;
+  marginRight: auto;
+  maxWidth: 30em;
+  text-align: left;
+`;
 
 export default class extends React.Component {
   render() {
     return (
-      <div>
-        <Parallax>
-          <main rel="main">
-            <Head>
-              <style>{Global}</style>
-              <link rel="shortcut icon" href="/static/favicon.ico" />
-            </Head>
-            <Header />
-            <Cell>
-              <div className={style.header}>
-                <img className={style.flamingo} src="/static/assets/flamingo.svg" alt="flamingo with sunglasses" />
-                <p className={style.blurb}>
-                  Orlando Creators is a monthly interview series showcasing the designers and visual artists that call this fair city “home.”
-                </p>
-                <p className={style.summary}>
-                  Some attribute it to the subtropical climate of Florida; others to the rich history of hospitality our city has become known for—whatever the reason, it’s true that warm hands have led to warm hearts. And it’s these same warm, sweaty, swampy mitts that have crafted some pretty neat things down in the deep South.
-                </p>
-              </div>
-              <div className={style.creditContainer}>
-                <h3 className={style.creditTitle}>Brought to you by</h3>
-                <div className={style.personContainer}>
-                  {people.map((person, key) => (
-                    <a id={key} className={style.person} href={person.url} target="_blank">
-                      <img src={`/static/assets/${person.image}`} alt={person.name} />
-                      <h4>{person.name}</h4>
-                      <h5>{person.title}</h5>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </Cell>
-          </main>
-          <Footer />
-        </Parallax>
-        <script src="https://use.typekit.net/fkk3wrp.js" async="true" />
-        <script>{'try{Typekit.load({ async: true });}catch(e){}'}</script>
-      </div>
+      <Parallax>
+        <main rel="main">
+          <Header />
+          <Cell>
+            <Description>
+              <Flamingo src="/static/assets/flamingo.svg" alt="flamingo with sunglasses" />
+              <Blurb>
+                Orlando Creators is a monthly interview series showcasing the
+                designers and visual artists that call this fair city “home.”
+              </Blurb>
+              <Summary>
+                Some attribute it to the subtropical climate of Florida; others to the rich history of hospitality our city has become known for—whatever the reason, it’s true that warm hands have led to warm hearts. And it’s these same warm, sweaty, swampy mitts that have crafted some pretty neat things down in the deep South.
+              </Summary>
+            </Description>
+            <div>
+              <CreditTitle>Brought to you by</CreditTitle>
+              <PersonContainer>
+                {people.map((person, key) => (
+                  <Person id={key} href={person.url} rel="noopener" target="_blank">
+                    <img src={`/static/assets/${person.image}`} alt={person.name} />
+                    <h4>{person.name}</h4>
+                    <h5>{person.title}</h5>
+                  </Person>
+                ))}
+              </PersonContainer>
+            </div>
+          </Cell>
+        </main>
+        <Footer />
+      </Parallax>
     );
   }
 }
