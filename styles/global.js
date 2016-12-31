@@ -39,6 +39,7 @@ a {
 }
 
 main {
+  background-color: ${color.blueTT};
   margin: 0;
   min-height: 100vh;
   padding-bottom: 8em;
@@ -47,7 +48,8 @@ main {
 }
 
 h1 {
-  color: ${color.blueSS};
+  color: ${color.blue};
+  font-family: ${typography.heading};
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 0;
@@ -55,7 +57,7 @@ h1 {
 }
 
 p {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.8;
   margin-bottom: 2em;
   margin-top: 2em;

@@ -12,7 +12,7 @@ import { color, media, space } from '../styles/style-utils';
  * @section Styles
  */
 
-const Base = styled.div`
+const Container = styled.div`
   paddingTop: 24px;
   paddingBottom: 24px;
   overflow: hidden;
@@ -67,7 +67,7 @@ const Nav = styled.nav`
  */
 
 export default () => (
-  <Base>
+  <Container>
     <Link href="/">
       <Logo
         src="/static/assets/orlando-creators.svg"
@@ -79,5 +79,5 @@ export default () => (
         <ActiveArea>About</ActiveArea>
       </Link>
     </Nav>
-  </Base>
+  </Container>
 );

@@ -33,6 +33,7 @@ export const color = {
   black: '#00303E',
   blue: '#0fa7c7',
   blueSS: '#005066',
+  blueT: '#00d4ff',
   blueTT: '#f0fdff',
   green: '#80a85f',
   greenS: '#34714a',

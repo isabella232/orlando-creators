@@ -174,14 +174,16 @@ const Title = styled.h2`
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.03725em;
+  line-height: 1.3;
   margin: 0;
 `;
 
 const Subtitle = styled.h3`
   color: ${color.blueSS};
-  fontSize: 13px;
+  fontSize: 12px;
   fontWeight: 400;
   letterSpacing: 0.2em;
+  line-height: 1.3;
   margin-bottom: 0;
   margin-top: 0;
   text-transform: uppercase;

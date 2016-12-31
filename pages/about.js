@@ -131,10 +131,10 @@ export default class extends React.Component {
               </Blurb>
               <Summary>
                 Some attribute it to the subtropical climate of Florida; others
-                to the rich history of hospitality our city has become known for—whatever
+                to the rich history of hospitality our city has become known for. Whatever
                 the reason, it’s true that warm hands have led to warm hearts. And it’s
                 these same warm, sweaty, swampy mitts that have crafted some pretty neat
-                things down in the deep South.
+                things down in the deep, deep South.
               </Summary>
             </Description>
             <div>

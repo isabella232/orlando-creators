@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 import Cell from './Cell';
 import Video from './Video';
-import { media, space } from '../styles/style-utils';
+import { color, media, space } from '../styles/style-utils';
 
 /**
  * @section Styles
@@ -17,11 +17,34 @@ const Card = styled.div`
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 8px 48px rgba(0, 80, 102, 0.2);
+  margin-bottom: 4em;
   padding: ${space(1)};
 
   ${media.s`
     padding: ${space(2)};
   `}
+`;
+
+const Button = styled.a`
+  background-color: ${color.blue};
+  border-radius: 2em;
+  color: white;
+  display: inline-block;
+  font-size: 0.875em;
+  font-weight: 700;
+  letter-spacing: 0.125em;
+  margin-top: 2em;
+  padding-bottom: 0.75em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0.75em;
+  text-transform: uppercase;
+  transition: background-color 200ms;
+
+  &:focus,
+  &:hover {
+    background-color: ${color.blueT};
+  }
 `;
 
 /**
@@ -45,10 +68,13 @@ export default class extends Component {
             <p>
               <strong>JM</strong><br />
               Justin Mezzell is a designer and illustrator residing in Orlando,
-              Florida. I currently serve as the creative director at Code School
-              as well as do my own freelance illustration as well as sell goods
-              and build them with a friend of mine, Rogie King, under the moniker
-              “Super Team Deluxe.”
+              Florida. I currently serve as the creative director at <a
+              href="https://www.codeschool.com" target="_blank" rel="noopener">Code
+              School</a> as well as do my own freelance illustration as well as
+              sell goods and build them with a friend of mine, <a
+              href="http://rog.ie/" target="_blank" rel="noopener">Rogie King</a>,
+              under the moniker <a href="https://superteamdeluxe.com/"
+              target="_blank" rel="noopener"><i>Super&nbsp;Team&nbsp;Deluxe</i></a>.
             </p>
             <p>
               <strong>OC</strong><br />
@@ -61,7 +87,7 @@ export default class extends Component {
               things. I’ve seen creative projects pop up all over the place. And
               if you decide to take ownership now, you just can. It’s not a
               walled garden. If you decide you want to be vocal and you want to
-              be a voice here, you can immediately do it and you can own that.
+              be a voice here, you can immediately do it and you can own&nbsp;that.
             </p>
             <p>
               <strong>OC</strong><br />
@@ -77,7 +103,7 @@ export default class extends Component {
               had to go into these other fields. I figured I’d do business or do
               something else that actually makes money. And then I was like
               “wait—people draw things and make things look nice? And they get
-              paid to do this? That sounds really interesting!”
+              paid to do this? That sounds really&nbsp;interesting!”
             </p>
             <p>
               <strong>OC</strong><br />
@@ -93,7 +119,7 @@ export default class extends Component {
               in different crafts and different mediums reach out and say “I
               want to build an experience. You do <i>this</i>. I do <i>this</i>.
               How can we do <i>this</i>? How do we create something that’s
-              bigger than the sum of our parts?”
+              bigger than the sum of our&nbsp;parts?”
             </p>
             <p>
               <strong>OC</strong><br />
@@ -128,6 +154,9 @@ export default class extends Component {
               they deserve a seat at the table. And they can just jump in with
               both feet and start going.
             </p>
+            <div style={{ textAlign: 'center' }}>
+              <Button href="http://justinmezzell.com">Visit Justin’s Site</Button>
+            </div>
           </Card>
         </Cell>
       </div>
