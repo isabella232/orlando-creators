@@ -2,7 +2,7 @@
  * @module Header
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
@@ -12,7 +12,8 @@ import { color, media, space } from '../styles/style-utils';
  * @section Styles
  */
 
-const Container = styled.div`
+const Container = styled.header`
+  display: block;
   paddingTop: 24px;
   paddingBottom: 24px;
   overflow: hidden;
@@ -23,6 +24,7 @@ const Logo = styled.img`
   height: 48px;
   margin-left: auto;
   margin-right: auto;
+  transition: opacity 500ms;
   width: auto;
 
   ${media.s`
@@ -56,6 +58,7 @@ const Nav = styled.nav`
   margin-left: auto;
   margin-right: auto;
   max-width: calc(100% - 64px);
+  transition: opacity 500ms 250ms;
 
   ${media.s`
     justify-content: flex-end;
@@ -67,18 +70,41 @@ const Nav = styled.nav`
  * @section Template
  */
 
-export default () => (
-  <Container>
-    <Link href="/">
-      <Logo
-        src="/static/assets/orlando-creators.svg"
-        alt="Orlando Creators"
-      />
-    </Link>
-    <Nav>
-      <Link href="/about">
-        <ActiveArea>About</ActiveArea>
-      </Link>
-    </Nav>
-  </Container>
-);
+export default class extends Component {
+  constructor(props) {
+    super(props);
+    this.animateIn = this.animateIn.bind(this);
+    this.state = {
+      visible: false,
+    };
+  }
+  componentDidMount() {
+    this.animateIn();
+  }
+  animateIn() {
+    this.setState({ visible: true });
+  }
+  setTop() {
+    this.setState({ top: `${this.overlay.clientHeight}px` });
+  }
+  render() {
+    return (
+      <Container>
+        <Link href="/">
+          <Logo
+            src="/static/assets/orlando-creators.svg"
+            alt="Orlando Creators"
+            style={{ opacity: this.state.visible ? 1 : 0 }}
+          />
+        </Link>
+        <Nav
+          style={{ opacity: this.state.visible ? 1 : 0 }}
+        >
+          <Link href="/about">
+            <ActiveArea>About</ActiveArea>
+          </Link>
+        </Nav>
+      </Container>
+    );
+  }
+}

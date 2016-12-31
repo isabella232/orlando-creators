@@ -17,7 +17,7 @@ body {
 }
 
 html {
-  background-color: ${color.black};
+  background-color: ${color.blueTT};
   color: ${color.blueSS};
   font-family: ${typography.text};
   font-feature-settings: common-ligatures;
@@ -61,4 +61,11 @@ p {
   margin-bottom: 2em;
   margin-top: 2em;
 }
+
+/* Hack */
+
+header {
+ display: none;
+}
+
 `;

@@ -40,7 +40,7 @@ const ActiveArea = styled.div`
   display: block;
   text-align: center;
   text-decoration: none;
-  transition: opacity 500ms;
+  transition: opacity 500ms 500ms;
 
   &:hover div div:first-child,
   &:focus div div:first-child {
@@ -59,7 +59,7 @@ const Card = styled.div`
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
-  transition: transform 400ms ${animation.deceleration};
+  transition: transform 400ms 500ms ${animation.deceleration};
   user-select: none;
   z-index: 10;
 `;
@@ -120,6 +120,7 @@ const ComingSoon = styled.div`
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
+  transition: opacity 1500ms 1000ms;
   user-select: none;
   div {
     font-size: 0.875em;
@@ -215,7 +216,7 @@ export default class extends Component {
     };
   }
   componentDidMount() {
-    window.setTimeout(this.animateIn, 500);
+    this.animateIn();
   }
   animateIn() {
     this.setState({ visible: true });
@@ -235,7 +236,7 @@ export default class extends Component {
               <ActiveArea style={{ opacity: this.state.visible ? '1' : '0' }}>
                 <Card style={{
                   backgroundColor: `${creator.color}`,
-                  transform: `${this.state.visible ? 'translateY(0)' : 'translateY(64px)'}`,
+                  transform: `${this.state.visible ? 'translateY(0)' : 'translateY(32px)'}`,
                 }}>
                   <PreviewContainer style={{ backgroundImage: `url(/static/assets/${creator.slug}.jpg)` }}>
                     <Icon src={`/static/assets/${creator.slug}.png`} alt={creator.name} />
@@ -255,7 +256,7 @@ export default class extends Component {
           </Column>
         ))}
         <Column>
-          <ComingSoon>
+          <ComingSoon style={{ opacity: `${this.state.visible ? '1' : '0'}` }}>
             <div>
               <img src="/static/assets/alarm.svg" role="presentation" />
               Coming soon!

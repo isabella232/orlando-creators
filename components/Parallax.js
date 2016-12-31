@@ -11,7 +11,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { color, media } from '../styles/style-utils';
+import { animation, color, media } from '../styles/style-utils';
 
 /**
  * @section Styles
@@ -35,8 +35,9 @@ const Background = styled.div`
   pointer-events: none;
   position: fixed;
   right: 0;
-  top: 100vh;
-  transform: translate3D(0, -100%, -100px) scale(2);
+  top: 75vh;
+  transition: opacity 1000ms 750ms, transform 1000ms 750ms ${animation.deceleration};
+  transform: translate3D(0, -100%, 0) scale(2);
   z-index: 1;
 
   ${media.s`
@@ -51,7 +52,18 @@ const Background = styled.div`
 export default class extends Component {
   constructor(props) {
     super(props);
-    this.state = { top: '100vh' };
+    this.animateIn = this.animateIn.bind(this);
+    this.state = {
+      top: '100vh',
+      visible: false,
+    };
+  }
+  componentDidMount() {
+    this.animateIn();
+    this.setTop();
+  }
+  animateIn() {
+    this.setState({ visible: true });
   }
   setTop() {
     this.setState({ top: `${this.overlay.clientHeight}px` });
@@ -59,14 +71,15 @@ export default class extends Component {
   handleResize() {
     this.setTop();
   }
-  componentDidMount() {
-    this.setTop();
-  }
   render() {
     return (
       <Wrapper>
         <Overlay innerRef={(overlay) => { this.overlay = overlay }}>{this.props.children}</Overlay>
-        <Background style={{ top: this.state.top }} />
+        <Background style={{
+          top: this.state.top,
+          opacity: `${this.state.visible ? '1' : '0'}`,
+          transform: `${this.state.visible ? 'translate3D(0, -100%, -100px) scale(2)' : 'translate3D(0, -87.5%, -100px) scale(2)'}`,
+        }} />
       </Wrapper>
     );
   }
