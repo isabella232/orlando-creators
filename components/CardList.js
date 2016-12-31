@@ -40,6 +40,7 @@ const ActiveArea = styled.div`
   display: block;
   text-align: center;
   text-decoration: none;
+  transition: opacity 500ms;
 
   &:hover div div:first-child,
   &:focus div div:first-child {
@@ -58,7 +59,7 @@ const Card = styled.div`
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
-  transition: opacity 200ms, box-shadow 200ms ${animation.standard}, transform 100ms ${animation.deceleration};
+  transition: transform 400ms ${animation.deceleration};
   user-select: none;
   z-index: 10;
 `;
@@ -205,8 +206,19 @@ const Video = styled.video`
 export default class extends Component {
   constructor(props) {
     super(props);
+    this.animateIn = this.animateIn.bind(this);
     this.pauseVideo = this.pauseVideo.bind(this);
     this.playVideo = this.playVideo.bind(this);
+
+    this.state = {
+      visible: false,
+    };
+  }
+  componentDidMount() {
+    window.setTimeout(this.animateIn, 500);
+  }
+  animateIn() {
+    this.setState({ visible: true });
   }
   pauseVideo() {
     this.video.pause();
@@ -220,8 +232,11 @@ export default class extends Component {
         {this.props.cards.map((creator, key) => (
           <Column key={key}>
             <Link href={`/creator/${creator.slug}`}>
-              <ActiveArea>
-                <Card style={{ backgroundColor: `${creator.color}` }}>
+              <ActiveArea style={{ opacity: this.state.visible ? '1' : '0' }}>
+                <Card style={{
+                  backgroundColor: `${creator.color}`,
+                  transform: `${this.state.visible ? 'translateY(0)' : 'translateY(64px)'}`,
+                }}>
                   <PreviewContainer style={{ backgroundImage: `url(/static/assets/${creator.slug}.jpg)` }}>
                     <Icon src={`/static/assets/${creator.slug}.png`} alt={creator.name} />
                   </PreviewContainer>

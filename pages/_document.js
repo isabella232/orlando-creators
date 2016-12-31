@@ -19,8 +19,8 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href="/static/favicon.ico" />
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
-          <style dangerouslySetInnerHTML={{ __html: this.props.style }} />
           <style>{global}</style>
+          <style dangerouslySetInnerHTML={{ __html: this.props.style }} />
         </Head>
         <body>
           <Main />

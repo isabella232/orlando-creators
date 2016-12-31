@@ -39,7 +39,6 @@ a {
 }
 
 main {
-  background-color: ${color.blueTT};
   margin: 0;
   min-height: 100vh;
   padding-bottom: 8em;

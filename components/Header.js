@@ -45,6 +45,7 @@ const ActiveArea = styled.div`
 
   ${media.s`
     line-height: 64px;
+    margin-top: 0;
   `}
 `;
 

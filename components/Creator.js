@@ -3,6 +3,7 @@
  */
 
 import React, { Component } from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 import Cell from './Cell';
@@ -45,6 +46,16 @@ const Button = styled.a`
   &:hover {
     background-color: ${color.blueT};
   }
+`;
+
+const Back = styled.div`
+  color: ${color.blueSS};
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.125em;
+  margin-top: 2em;
+  opacity: 0.5;
+  text-transform: uppercase;
 `;
 
 /**
@@ -156,6 +167,9 @@ export default class extends Component {
             </p>
             <div style={{ textAlign: 'center' }}>
               <Button href="http://justinmezzell.com">Visit Justin’s Site</Button>
+              <Link href="/">
+                <Back>See other creators</Back>
+              </Link>
             </div>
           </Card>
         </Cell>
