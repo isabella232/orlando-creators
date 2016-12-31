@@ -40,9 +40,10 @@ a {
 
 main {
   margin: 0;
-  min-height: 50vh;
+  min-height: 100vh;
+  padding-bottom: 8em;
   position: relative;
-  zIndex: 10;
+  z-index: 10;
 }
 
 h1 {

@@ -47,26 +47,34 @@ export const color = {
 
 export const media = {
   s: (...args) => css`
-    @media (min-width: 600px) {
+    @media screen and (min-width: 600px) {
       ${css(...args)}
     }
   `,
   m: (...args) => css`
-    @media (min-width: 900px) {
+    @media screen and (min-width: 900px) {
       ${css(...args)}
     }
   `,
   l: (...args) => css`
-    @media (min-width: 1200px) {
+    @media screen and (min-width: 1200px) {
       ${css(...args)}
     }
   `,
   xl: (...args) => css`
-    @media (min-width: 1800px) {
+    @media screen and (min-width: 1800px) {
       ${css(...args)}
     }
   `,
 };
+
+/**
+ * @section Space
+ */
+
+export function space(multiplier = 1) {
+  return `${32 * multiplier}px`;
+}
 
 /**
  * @section Typography

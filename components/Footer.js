@@ -2,7 +2,7 @@
  * @module Footer
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import { color } from '../styles/style-utils';
@@ -13,7 +13,10 @@ import { color } from '../styles/style-utils';
 
 const Footer = styled.footer`
   background-color: ${color.black};
-  margin-top: 6em;
+  left: 0;
+  position: absolute;
+  top: 100vh;
+  width: 100%;
 `;
 
 const Colophon = styled.div`
@@ -22,7 +25,7 @@ const Colophon = styled.div`
   font-weight: 900;
   letter-spacing: 0.0625em;
   line-height: 2;
-  pagging-bottom: 1em;
+  padding-bottom: 1em;
   padding-top: 1em;
   position: relative;
   text-align: center;
@@ -30,10 +33,28 @@ const Colophon = styled.div`
   z-index: 10;
 `;
 
-export default () => (
-  <Footer>
-    <Colophon>
-      Made with 🍊  by <a href="http://madewithenvy.com/" rel="noopener" target="_blank">Envy</a> and <a href="http://macbethstudio.com/" target="_blank">Macbeth Studio</a>
-    </Colophon>
-  </Footer>
-);
+export default class extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { top: '100vh' };
+  }
+  setTop() {
+    this.setState({ top: `${this.footer.clientHeight}px` });
+  }
+  handleResize() {
+    this.setTop();
+  }
+  componentDidMount() {
+    this.setTop();
+  }
+
+  render() {
+    return (
+      <Footer innerRef={(footer) => { this.footer = footer }}>
+        <Colophon>
+          Made with 🍊  by <a href="http://madewithenvy.com/" rel="noopener" target="_blank">Envy</a> and <a href="http://macbethstudio.com/" target="_blank">Macbeth Studio</a>
+        </Colophon>
+      </Footer>
+    );
+  }
+}

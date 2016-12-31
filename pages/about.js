@@ -9,7 +9,6 @@ import styled from 'styled-components';
 
 import Cell from '../components/Cell';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Parallax from '../components/Parallax';
 
 import { animation, color } from '../styles/style-utils';
@@ -44,9 +43,9 @@ const people = [
  */
 
 const Description = styled.div`
-  padding-bottom: 2em,
-  padding-top: 2em,
-  text-align: center,
+  padding-bottom: 2em;
+  padding-top: 2em;
+  text-align: center;
 `;
 
 const Blurb = styled.p`
@@ -72,7 +71,7 @@ const Flamingo = styled.img`
   width: 128px;
 `;
 
-const Person = styled.div`
+const Person = styled.a`
   flex: 1;
   line-height: 1;
   text-align: center;
@@ -104,7 +103,7 @@ const Person = styled.div`
 
 const PersonContainer = styled.div`
   display: flex;
-  margin-bottom: 5em;
+  padding-bottom: 10em;
   width: 100%;
 `;
 
@@ -127,11 +126,15 @@ export default class extends React.Component {
             <Description>
               <Flamingo src="/static/assets/flamingo.svg" alt="flamingo with sunglasses" />
               <Blurb>
-                Orlando Creators is a monthly interview series showcasing the
+                Orlando Creators is an interview series showcasing the
                 designers and visual artists that call this fair city “home.”
               </Blurb>
               <Summary>
-                Some attribute it to the subtropical climate of Florida; others to the rich history of hospitality our city has become known for—whatever the reason, it’s true that warm hands have led to warm hearts. And it’s these same warm, sweaty, swampy mitts that have crafted some pretty neat things down in the deep South.
+                Some attribute it to the subtropical climate of Florida; others
+                to the rich history of hospitality our city has become known for—whatever
+                the reason, it’s true that warm hands have led to warm hearts. And it’s
+                these same warm, sweaty, swampy mitts that have crafted some pretty neat
+                things down in the deep South.
               </Summary>
             </Description>
             <div>
@@ -148,7 +151,6 @@ export default class extends React.Component {
             </div>
           </Cell>
         </main>
-        <Footer />
       </Parallax>
     );
   }

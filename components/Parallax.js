@@ -11,7 +11,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { color } from '../styles/style-utils';
+import { color, media } from '../styles/style-utils';
 
 /**
  * @section Styles
@@ -29,7 +29,7 @@ const Overlay = styled.div`
 const Background = styled.div`
   background-image: url(/static/assets/orlando.svg);
   background-position: center bottom;
-  background-size: 150% auto;
+  background-size: 250% auto;
   height: 100%;
   left: 0;
   pointer-events: none;
@@ -38,6 +38,10 @@ const Background = styled.div`
   top: 100vh;
   transform: translate3D(0, -100%, -100px) scale(2);
   z-index: 1;
+
+  ${media.s`
+    background-size: 150% auto;
+  `}
 `;
 
 /**
