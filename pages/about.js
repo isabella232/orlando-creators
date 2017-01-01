@@ -84,8 +84,9 @@ const Flamingo = styled.img`
 `;
 
 const Person = styled.a`
-  flex: 1;
   line-height: 1;
+  margin-left: ${space(0.75)};
+  margin-right: ${space(0.75)};
   text-align: center;
   img {
     border-radius: 32px;
@@ -119,6 +120,7 @@ const Person = styled.a`
 
 const PersonContainer = styled.div`
   display: flex;
+  justify-content: center;
   padding-left: ${space()};
   padding-right: ${space()};
   width: 100%;
@@ -159,11 +161,11 @@ export default class extends React.Component {
               <Flamingo src="/static/assets/flamingo.svg" alt="flamingo with sunglasses" />
               <Blurb>
                 Orlando Creators is an interview series showcasing the
-                designers and visual artists that call this fair city “home.”
+                designers and visual&nbsp;artists that call this fair city&nbsp;“home.”
               </Blurb>
               <Summary>
                 Some attribute it to the subtropical climate of Florida; others
-                to the rich history of hospitality our city has become known for. Whatever
+                to the hospitality our city is famous for. Whatever
                 the reason, it’s true that warm hands have led to warm hearts. And it’s
                 these same warm, sweaty, swampy mitts that have crafted some pretty neat
                 things down in the deep, deep South.
@@ -173,7 +175,7 @@ export default class extends React.Component {
               <CreditTitle>Made with 🍊 by</CreditTitle>
               <PersonContainer>
                 {people.map((person, key) => (
-                  <Person id={key} href={person.url} rel="noopener" target="_blank">
+                  <Person key={key} href={person.url} rel="noopener" target="_blank">
                     <img src={`/static/assets/${person.image}`} alt={person.name} />
                     <h4>{person.name}</h4>
                     <h5>{person.title}</h5>

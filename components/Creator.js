@@ -139,7 +139,12 @@ export default class extends Component {
               <h5>{`Connect with ${this.props.creator.name}`}</h5>
               <SocialContainer>
                 {this.props.creator.social.map((social, key) => (
-                  <Social key={key} name={this.props.creator.name} type={social.type} url={social.url} />
+                  <Social
+                    key={key}
+                    name={this.props.creator.name}
+                    type={social.type}
+                    url={social.url}
+                  />
                 ))}
               </SocialContainer>
               <Link href="/">
