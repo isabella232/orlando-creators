@@ -32,6 +32,7 @@ const Card = styled.div`
   h1 {
     margin-bottom: 1em;
     margin-left: ${space()}
+    text-align: center;
     width: 100%;
     ${media.s`
       margin-left: 0;
@@ -57,7 +58,7 @@ const ArtworkContainer = styled.div`
   width: 100%;
 
   ${media.s`
-    flex: 1;
+    width: 50%;
   `}
 `;
 
@@ -65,14 +66,13 @@ const Transcript = styled.div`
   width: 100%;
 
   ${media.s`
-    flex: 1;
+    width: 50%;
   `}
 
   h2 {
-    text-transform: uppercase;
+    color: ${color.blueS};
     font-size: 0.75em;
-    letter-spacing: 0.125em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 
     + p {
       margin-top: 0;

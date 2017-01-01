@@ -1,8 +1,20 @@
+/**
+ * YouTube wrapper
+ */
+
 import React, { Component } from 'react';
+
+/**
+ * @section Styles
+ */
+
 import styled from 'styled-components';
+import { color } from '../styles/style-utils';
 
 const VideoContainer = styled.div`
+  background-color: ${color.blueSS};
   height: 0;
+  overflow: hidden;
   paddingTop: 56.25%;
   position: relative;
   width: 100%;
