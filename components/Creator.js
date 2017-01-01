@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 import ArtworkList from './ArtworkList';
 import Cell from './Cell';
+import Social from './Social';
 import Video from './Video';
 import { color, media, space } from '../styles/style-utils';
 
@@ -42,34 +43,12 @@ const Card = styled.div`
   `}
 `;
 
-const Button = styled.a`
-  background-color: ${color.blue};
-  border-radius: 2em;
-  color: white;
-  display: inline-block;
-  font-size: 0.875em;
-  font-weight: 700;
-  letter-spacing: 0.125em;
-  margin-top: 2em;
-  padding-bottom: 0.75em;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-top: 0.75em;
-  text-transform: uppercase;
-  transition: background-color 200ms;
-
-  &:focus,
-  &:hover {
-    background-color: ${color.blueT};
-  }
-`;
-
 const Back = styled.div`
   color: ${color.blueSS};
   font-size: 0.75em;
   font-weight: 700;
   letter-spacing: 0.125em;
-  margin-top: 2em;
+  margin-top: 4em;
   opacity: 0.5;
   text-transform: uppercase;
 `;
@@ -105,9 +84,21 @@ const Transcript = styled.div`
   }
 `;
 
+const SocialContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const Footer = styled.div`
   text-align: center;
   width: 100%;
+
+  h5 {
+    color: ${color.blue};
+    font-weight: 400;
+    letter-spacing: 0.125em;
+    text-transform: uppercase;
+  }
 `;
 
 /**
@@ -135,7 +126,12 @@ export default class extends Component {
             </ArtworkContainer>
             <Transcript dangerouslySetInnerHTML={this.setTranscript()} />
             <Footer>
-              <Button href="http://justinmezzell.com">Visit Justin’s Site</Button>
+              <h5>{`Connect with ${this.props.creator.name}`}</h5>
+              <SocialContainer>
+                {this.props.creator.social.map((social, key) => (
+                  <Social key={key} type={social.type} url={social.url} />
+                ))}
+              </SocialContainer>
               <Link href="/">
                 <Back>See other creators</Back>
               </Link>

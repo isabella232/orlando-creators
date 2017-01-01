@@ -35,6 +35,7 @@ const Artwork = styled.div`
 const ImageContainer = styled.div`
   background-color: ${color.blueTT};
   border-radius: 8px;
+  box-shadow: 0 ${space(0.25)} ${space()} rgba(0, 167, 201, 0.3);
   height: 0;
   margin-bottom: ${space(0.5)};
   padding-top: 75%;

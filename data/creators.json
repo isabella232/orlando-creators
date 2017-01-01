@@ -4,6 +4,24 @@
     "color": "#68cade",
     "name": "Justin Mezzell",
     "slug": "justin-mezzell",
+    "social": [
+      {
+        "type": "dribbble",
+        "url": "https://dribbble.com/justinmezzell"
+      },
+      {
+        "type": "twitter",
+        "url": "https://twitter.com/justinmezzell"
+      },
+      {
+        "type": "twitch",
+        "url": "https://www.twitch.tv/justinmezzell"
+      },
+      {
+        "type": "instagram",
+        "url": "https://instagram.com/justinmezzell"
+      }
+    ],
     "title": "Art Director at Code School",
     "videoID": "u8mi_ZF1XGY"
   }
