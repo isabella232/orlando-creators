@@ -10,6 +10,7 @@ import transcript from '../../transcripts/justin-mezzell';
 import creators from '../../data/creators.json';
 
 const creator = creators.find(item => (item.slug === 'justin-mezzell'));
+const pageTitle = 'Justin Mezzell 🌴 Orlando Creators';
 
 export default class extends React.Component {
   constructor(props) {
@@ -25,7 +26,11 @@ export default class extends React.Component {
       <Parallax>
         <main rel="main">
           <Head>
-            <title>Justin Mezzell 🌴 Orlando Creators</title>
+            <title>{pageTitle}</title>
+            <meta property="og:title" content={pageTitle} />
+            <meta property="og:url" content={`http://www.orlandocreators.com/creator/${creator.slug}`} />
+            <meta property="og:image" content={`/static/assets/${creator.slug}-preview.jpg`} />
+            <meta property="twitter:image" content={`/static/assets/${creator.slug}-preview.jpg`} />
           </Head>
           <Header />
           <Creator

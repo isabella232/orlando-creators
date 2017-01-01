@@ -139,14 +139,18 @@ const Summary = styled.p`
   text-align: left;
 `;
 
+const pageTitle = 'Orlando Creators 🌴';
+
 export default class extends React.Component {
   render() {
     return (
       <Parallax>
         <Head>
-          <title>Orlando Creators 🌴 </title>
-          <meta type="og:image" content="/static/assets/orlando-creators.jpg" />
-          <meta type="twitter:image" content="/static/assets/orlando-creators.jpg" />
+          <title>{pageTitle}</title>
+          <meta property="og:title" content={pageTitle} />
+          <meta property="og:url" content="http://www.orlandocreators.com/about" />
+          <meta property="og:image" content="/static/assets/orlando-creators.jpg" />
+          <meta property="twitter:image" content="/static/assets/orlando-creators.jpg" />
         </Head>
         <main rel="main">
           <Header />
