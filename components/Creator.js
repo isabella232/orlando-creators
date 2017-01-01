@@ -3,6 +3,7 @@
  */
 
 import React, { Component } from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
 
@@ -115,6 +116,10 @@ export default class extends Component {
   render() {
     return (
       <div>
+        <Head>
+          <meta type="og:image" content={`/static/assets/${this.props.creator.slug}-preview.jpg`} />
+          <meta type="twitter:image" content={`/static/assets/${this.props.creator.slug}-preview.jpg`} />
+        </Head>
         <Cell large>
           <Video src={`https://www.youtube.com/embed/${this.props.creator.videoID}`} />
         </Cell>

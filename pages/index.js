@@ -9,7 +9,11 @@ const pageTitle = 'Orlando Creators 🌴 an interview series featuring Orlando-b
 
 export default () => (
   <Parallax>
-    <Head><title>{ pageTitle }</title></Head>
+    <Head>
+      <title>{ pageTitle }</title>
+      <meta type="og:image" content="/static/assets/orlando-creators.jpg" />
+      <meta type="twitter:image" content="/static/assets/orlando-creators.jpg" />
+    </Head>
     <main rel="main">
       <Header />
       <CreatorsList />

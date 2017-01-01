@@ -143,7 +143,11 @@ export default class extends React.Component {
   render() {
     return (
       <Parallax>
-        <Head><title>Orlando Creators 🌴 </title></Head>
+        <Head>
+          <title>Orlando Creators 🌴 </title>
+          <meta type="og:image" content="/static/assets/orlando-creators.jpg" />
+          <meta type="twitter:image" content="/static/assets/orlando-creators.jpg" />
+        </Head>
         <main rel="main">
           <Header />
           <Cell>
