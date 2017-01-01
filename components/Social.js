@@ -46,7 +46,7 @@ export default class extends Component {
   render() {
     return (
       <Social href={this.props.url} title={this.props.type} target="_blank" rel="noopener">
-        <img src={`/static/assets/${this.props.type}.svg`} alt={this.props.type} />
+        <img src={`/static/assets/${this.props.type}.svg`} alt={`Connect with ${this.props.name} on ${this.props.type}`} />
       </Social>
     );
   }

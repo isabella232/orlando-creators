@@ -92,7 +92,7 @@ export default class extends Component {
             >
               <img
                 src={artwork.image}
-                alt={artwork.title}
+                alt={`${artwork.title} © ${this.props.creator} ${artwork.year}`}
                 style={{
                   cursor: `zoom-${this.state.zoomed === key ? 'out' : 'in'}`,
                   transform: `scale(${this.state.zoomed === key ? 2 : 1})`,

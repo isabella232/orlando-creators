@@ -17,8 +17,11 @@ const Cell = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: ${props => props.large ? '960px' : '800px'};
-  ${media.s `
+  ${media.s`
     ${props => props.large ? 'max-width: 1200px;' : ''}
+  `}
+  ${media.l`
+    max-width: ${props => props.large ? '1100px' : '960px'};
   `}
 `;
 

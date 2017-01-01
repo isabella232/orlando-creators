@@ -31,11 +31,13 @@ const Card = styled.div`
   padding-right: ${space()};
 
   h1 {
-    margin-bottom: 1em;
-    margin-left: ${space()}
+    line-height: 1;
+    margin-bottom: ${space()};
+    margin-left: ${space()};
     text-align: center;
     width: 100%;
     ${media.s`
+      margin-bottom: ${space(2)};
       margin-left: 0;
     `}
   }
@@ -74,6 +76,9 @@ const Transcript = styled.div`
     color: ${color.blueS};
     font-size: 0.75em;
     margin-bottom: 0.5em;
+    ${media.s`
+      font-size: 0.875em;
+    `}
 
     + p {
       margin-top: 0;
@@ -81,7 +86,7 @@ const Transcript = styled.div`
   }
 
   p {
-    font-size: 14px;
+    font-size: 15px;
   }
 `;
 
@@ -121,20 +126,20 @@ export default class extends Component {
           <meta type="twitter:image" content={`/static/assets/${this.props.creator.slug}-preview.jpg`} />
         </Head>
         <Cell large>
-          <Video src={`https://www.youtube.com/embed/${this.props.creator.videoID}`} />
+          <Video src={`https://www.youtube.com/embed/${this.props.creator.videoID}?rel=0&color=white&modestbranding=1`} />
         </Cell>
         <Cell>
           <Card>
             <h1>{this.props.creator.name}</h1>
             <ArtworkContainer>
-              <ArtworkList artworks={this.props.artworks} />
+              <ArtworkList creator={this.props.creator.name} artworks={this.props.artworks} />
             </ArtworkContainer>
             <Transcript dangerouslySetInnerHTML={this.setTranscript()} />
             <Footer>
               <h5>{`Connect with ${this.props.creator.name}`}</h5>
               <SocialContainer>
                 {this.props.creator.social.map((social, key) => (
-                  <Social key={key} type={social.type} url={social.url} />
+                  <Social key={key} name={this.props.creator.name} type={social.type} url={social.url} />
                 ))}
               </SocialContainer>
               <Link href="/">
