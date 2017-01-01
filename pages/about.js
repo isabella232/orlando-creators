@@ -12,7 +12,7 @@ import Cell from '../components/Cell';
 import Header from '../components/Header';
 import Parallax from '../components/Parallax';
 
-import { animation, color } from '../styles/style-utils';
+import { animation, color, media, space } from '../styles/style-utils';
 
 /**
  * @section Data
@@ -45,16 +45,27 @@ const people = [
 
 const Description = styled.div`
   padding-bottom: 2em;
+  padding-left: ${space()};
+  padding-right: ${space()};
   padding-top: 2em;
   text-align: center;
+
+  ${media.s`
+    padding-left: 0;
+    padding-right: 0;
+  `}
 `;
 
 const Blurb = styled.p`
   color: ${color.blue};
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 200;
-  line-height: 1.5;
+  line-height: 1.375;
   margin-top: 0.5em;
+  ${media.s`
+    font-size: 28px;
+    line-height: 1.5;
+  `}
 `;
 
 const CreditTitle = styled.h3`
@@ -77,35 +88,46 @@ const Person = styled.a`
   line-height: 1;
   text-align: center;
   img {
-    borderRadius: 32px;
-    boxShadow: 0 16px 32px rgba(0,80,102,0);
-    height: 128px;
+    border-radius: 32px;
+    box-shadow: 0 16px 32px rgba(0,80,102,0);
+    height: 96px;
     transition: box-shadow 200ms,transform 200ms ${animation.standard};
-    width: 128px;
+    width: 96px;
+    ${media.s`
+      height: 128px;
+      width: 128px;
+    `}
   }
   h4 {
     color: ${color.blue};
     font-size: 1.125em;
+    margin-bottom: 0;
     margin-top: 0.5em;
-    marginBottom: 0;
   }
   h5 {
     color: ${color.blueSS};
     font-size: 0.825em;
+    margin-bottom: 0;
     margin-top: 0.25em;
-    marginBottom: 0;
   }
   &:focus img,
   &:hover img {
-    boxShadow: 0 16px 32px rgba(0,80,102,0.5);
+    box-shadow: 0 16px 32px rgba(0,80,102,0.5);
     transform: translateY(-20%);
   }
 `;
 
 const PersonContainer = styled.div`
   display: flex;
-  padding-bottom: 10em;
+  padding-left: ${space()};
+  padding-right: ${space()};
   width: 100%;
+
+  ${media.s`
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 10em;
+  `}
 `;
 
 const Summary = styled.p`

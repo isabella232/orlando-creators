@@ -1,4 +1,4 @@
-import { color, typography } from './style-utils';
+import { color, media, typography } from './style-utils';
 
 export default `
 * {
@@ -49,10 +49,13 @@ main {
 h1 {
   color: ${color.blue};
   font-family: ${typography.heading};
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 800;
   margin-bottom: 0;
   margin-top: 0;
+  ${media.s`
+    font-size: 48px;
+  `}
 }
 
 p {

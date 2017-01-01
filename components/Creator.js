@@ -23,11 +23,18 @@ const Card = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 4em;
-  padding: ${space()};
+  padding-bottom: ${space()};
+  padding-top: ${space()};
+  padding-left: ${space()};
+  padding-right: ${space()};
 
   h1 {
     margin-bottom: 1em;
+    margin-left: ${space()}
     width: 100%;
+    ${media.s`
+      margin-left: 0;
+    `}
   }
 
   ${media.s`
@@ -68,11 +75,19 @@ const Back = styled.div`
 `;
 
 const ArtworkContainer = styled.div`
-  flex: 1;
+  width: 100%;
+
+  ${media.s`
+    flex: 1;
+  `}
 `;
 
 const Transcript = styled.div`
-  flex: 2;
+  width: 100%;
+
+  ${media.s`
+    flex: 1;
+  `}
 
   h2 {
     text-transform: uppercase;
@@ -83,6 +98,10 @@ const Transcript = styled.div`
     + p {
       margin-top: 0;
     }
+  }
+
+  p {
+    font-size: 14px;
   }
 `;
 

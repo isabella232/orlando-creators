@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { space } from '../styles/style-utils';
+import { color, media, space } from '../styles/style-utils';
 
 /**
  * @section Styles
@@ -14,14 +14,31 @@ import { space } from '../styles/style-utils';
 const Artwork = styled.div`
   margin-bottom: 2em;
   text-align: center;
-  transform: translateX(-${space(4)});
-  width: calc(100% + ${space(2)});
+  ${media.s`
+    padding-right: ${space()};
+  `}
+  ${media.m`
+    padding-right: 0;
+    transform: translateX(-${space(4)});
+    width: calc(100% + ${space(2)});
+  `}
 
   img {
     border-radius: 8px;
-    max-width: 100%;
-    overflow: hidden;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
+`;
+
+const ImageContainer = styled.div`
+  background-color: ${color.blueTT};
+  border-radius: 8px;
+  height: 0;
+  margin-bottom: ${space(0.5)};
+  padding-top: 75%;
+  position: relative;
 `;
 
 const Title = styled.h3`
@@ -49,7 +66,9 @@ export default class extends Component {
       <div>
         {this.props.artworks.map((artwork, key) => (
           <Artwork key={key}>
-            <img src={artwork.image} alt={artwork.title} />
+            <ImageContainer>
+              <img src={artwork.image} alt={artwork.title} />
+            </ImageContainer>
             <Title>{artwork.title}</Title>
             <Year>{artwork.year}</Year>
           </Artwork>
