@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import Head from 'next/head';
 import styled from 'styled-components';
 
 import Cell from '../components/Cell';
@@ -21,13 +22,13 @@ const people = [
   {
     image: 'ayana.jpg',
     name: 'Ayana Campbell',
-    title: 'Design + Animation',
+    title: 'Animation + Design',
     url: 'https://twitter.com/_ayanacampbell',
   },
   {
     image: 'drew.jpg',
     name: 'Drew Powers',
-    title: 'Design + Code',
+    title: 'Code + Design',
     url: 'https://twitter.com/an_ennui',
   },
   {
@@ -57,9 +58,9 @@ const Blurb = styled.p`
 `;
 
 const CreditTitle = styled.h3`
-  color: ${color.blue};
-  font-size: 14px;
-  font-weight: 300;
+  color: ${color.blueSS};
+  font-size: 13px;
+  font-weight: 700;
   letter-spacing: 0.125em;
   margin-bottom: 2em;
   text-align: center;
@@ -120,6 +121,7 @@ export default class extends React.Component {
   render() {
     return (
       <Parallax>
+        <Head><title>Orlando Creators 🌴 </title></Head>
         <main rel="main">
           <Header />
           <Cell>
@@ -138,7 +140,7 @@ export default class extends React.Component {
               </Summary>
             </Description>
             <div>
-              <CreditTitle>Brought to you by</CreditTitle>
+              <CreditTitle>Made with 🍊 by</CreditTitle>
               <PersonContainer>
                 {people.map((person, key) => (
                   <Person id={key} href={person.url} rel="noopener" target="_blank">
