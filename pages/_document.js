@@ -5,7 +5,6 @@ import global from '../styles/global';
 
 export default class MyDocument extends Document {
   static async getInitialProps({ renderPage }) {
-    styleSheet.flush();
     const page = renderPage();
     const style = styleSheet.rules().map(rule => rule.cssText).join('\n');
     return { ...page, style };

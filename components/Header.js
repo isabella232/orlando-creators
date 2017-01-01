@@ -94,12 +94,9 @@ export default class extends Component {
           <Logo
             src="/static/assets/orlando-creators.svg"
             alt="Orlando Creators"
-            style={{ opacity: this.state.visible ? 1 : 0 }}
           />
         </Link>
-        <Nav
-          style={{ opacity: this.state.visible ? 1 : 0 }}
-        >
+        <Nav>
           <Link href="/about">
             <ActiveArea>About</ActiveArea>
           </Link>
