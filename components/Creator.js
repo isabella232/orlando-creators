@@ -33,12 +33,10 @@ const Card = styled.div`
   h1 {
     line-height: 1;
     margin-bottom: ${space()};
-    margin-left: ${space()};
     text-align: center;
     width: 100%;
     ${media.s`
       margin-bottom: ${space(2)};
-      margin-left: 0;
     `}
   }
 
