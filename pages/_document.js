@@ -9,7 +9,9 @@ export default class MyDocument extends Document {
     const style = styleSheet.rules().map(rule => rule.cssText).join('\n');
     return { ...page, style };
   }
-
+  loadTypekit() {
+    return { __html: 'try{Typekit.load({ async: true });}catch(e){}' };
+  }
   render() {
     return (
       <html>
@@ -24,8 +26,8 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script src="https://use.typekit.net/fkk3wrp.js" async="true" />
-          <script>{'try{Typekit.load({ async: true });}catch(e){}'}</script>
+          <script src="https://use.typekit.net/xua7kmr.js" />
+          <script dangerouslySetInnerHTML={this.loadTypekit()} />
         </body>
       </html>
     );

@@ -27,8 +27,9 @@ html {
 }
 
 body {
-  overflow-y: scroll;
   overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   perspective: 100px;
   transform-style: preserve-3d;
 }
