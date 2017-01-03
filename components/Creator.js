@@ -45,16 +45,6 @@ const Card = styled.div`
   `}
 `;
 
-const Back = styled.div`
-  color: ${color.blueSS};
-  font-size: 0.75em;
-  font-weight: 700;
-  letter-spacing: 0.125em;
-  margin-top: 4em;
-  opacity: 0.5;
-  text-transform: uppercase;
-`;
-
 const ArtworkContainer = styled.div`
   width: 100%;
 
@@ -145,9 +135,6 @@ export default class extends Component {
                   />
                 ))}
               </SocialContainer>
-              <Link href="/">
-                <Back>See other creators</Back>
-              </Link>
             </Footer>
           </Card>
         </Cell>
