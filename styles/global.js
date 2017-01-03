@@ -52,6 +52,7 @@ h1 {
   font-family: ${typography.heading};
   font-size: 40px;
   font-weight: 800;
+  letter-spacing: 0.025em;
   margin-bottom: 0;
   margin-top: 0;
   ${media.s`
