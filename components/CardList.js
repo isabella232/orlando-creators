@@ -42,14 +42,16 @@ const ActiveArea = styled.div`
   text-decoration: none;
   transition: opacity 500ms;
 
-  &:hover div div:first-child,
-  &:focus div div:first-child {
-    opacity: 0;
-  }
-  &:hover img,
-  &:focus img {
-    opacity: 1;
-  }
+  ${media.s`
+    &:hover div div:first-child,
+    &:focus div div:first-child {
+      opacity: 0;
+    }
+    &:hover img,
+    &:focus img {
+      opacity: 1;
+    }
+  `}
 `;
 
 const Card = styled.div`
