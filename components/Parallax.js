@@ -36,7 +36,7 @@ const Background = styled.div`
   position: fixed;
   right: 0;
   top: 75vh;
-  transition: opacity 1000ms 750ms, transform 1000ms 750ms ${animation.deceleration};
+  transition: opacity 1000ms 500ms, transform 1000ms 500ms ${animation.deceleration};
   transform: translate3D(0, -100%, 0) scale(2);
   z-index: 1;
 

@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-import { animation, color, media, typography } from '../styles/style-utils';
+import { animation, color, media, space, typography } from '../styles/style-utils';
 
 /**
  * @section Styles
@@ -40,7 +40,7 @@ const ActiveArea = styled.div`
   display: block;
   text-align: center;
   text-decoration: none;
-  transition: opacity 500ms 500ms;
+  transition: opacity 500ms;
 
   &:hover div div:first-child,
   &:focus div div:first-child {
@@ -54,12 +54,12 @@ const ActiveArea = styled.div`
 
 const Card = styled.div`
   border-radius: 6px;
-  box-shadow: 0 16px 32px rgba(0,80,102,0.25);
+  box-shadow: 0 8px 16px rgba(0,80,102,0.25);
   margin-bottom: 1em;
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
-  transition: transform 400ms 500ms ${animation.deceleration};
+  transition: transform 400ms ${animation.deceleration};
   user-select: none;
   z-index: 10;
 `;
@@ -80,11 +80,11 @@ const PreviewContainer = styled.div`
     border-radius: 50%;
     bottom: 0;
     content: "";
-    height: 75%;
+    height: ${space(10)};
     left: 0;
     position: absolute;
-    transform: translate(-50%, 62.5%);
-    width: 62.5%;
+    transform: translate(-50%, 65%);
+    width: ${space(10)};
     z-index: 10;
   }
 `;
@@ -104,11 +104,11 @@ const VideoContainer = styled.div`
     border-radius: 50%;
     bottom: 0;
     content: "";
-    height: 75%;
+    height: ${space(10)};
     left: 0;
     position: absolute;
-    transform: translate(-50%, 62.5%);
-    width: 62.5%;
+    transform: translate(-50%, 65%);
+    width: ${space(10)};
     z-index: 5;
   }
 `;
@@ -120,7 +120,7 @@ const ComingSoon = styled.div`
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
-  transition: opacity 1500ms 1000ms;
+  transition: opacity 1500ms 750ms;
   user-select: none;
   div {
     font-size: 0.875em;
@@ -146,9 +146,9 @@ const ComingSoon = styled.div`
 `;
 
 const Icon = styled.img`
-  bottom: 0;
+  bottom: -1em;
   height: 50%;
-  left: 1em;
+  left: 0;
   max-width: none;
   pointer-events: none;
   position: absolute;
@@ -182,13 +182,12 @@ const Title = styled.h2`
 
 const Subtitle = styled.h3`
   color: ${color.blueSS};
-  fontSize: 12px;
-  fontWeight: 400;
-  letterSpacing: 0.2em;
+  fontSize: 14px;
+  fontWeight: 700;
+  letterSpacing: 0.0625em;
   line-height: 1.3;
   margin-bottom: 0;
   margin-top: 0;
-  text-transform: uppercase;
 `;
 
 const Video = styled.video`
