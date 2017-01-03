@@ -20,18 +20,6 @@ import { animation, color, media, space } from '../styles/style-utils';
 
 const people = [
   {
-    image: 'ayana.jpg',
-    name: 'Ayana Campbell',
-    title: 'Animation + Design',
-    url: 'https://twitter.com/_ayanacampbell',
-  },
-  {
-    image: 'drew.jpg',
-    name: 'Drew Powers',
-    title: 'Code + Design',
-    url: 'https://twitter.com/an_ennui',
-  },
-  {
     image: 'macbeth-studio.svg',
     name: 'Macbeth Studio',
     title: 'Videography',
@@ -42,6 +30,18 @@ const people = [
     name: 'Envy',
     title: 'Concept + Website',
     url: 'http://madewithenvy.com',
+  },
+  {
+    image: 'ayana.jpg',
+    name: 'Ayana Campbell',
+    title: 'Animation + Design',
+    url: 'https://twitter.com/_ayanacampbell',
+  },
+  {
+    image: 'drew.jpg',
+    name: 'Drew Powers',
+    title: 'Code + Design',
+    url: 'https://twitter.com/an_ennui',
   },
 ];
 
