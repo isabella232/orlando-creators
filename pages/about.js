@@ -37,6 +37,12 @@ const people = [
     title: 'Videography',
     url: 'http://macbethstudio.com',
   },
+  {
+    image: 'envy.svg',
+    name: 'Envy',
+    title: 'Concept + Website',
+    url: 'http://madewithenvy.com',
+  },
 ];
 
 /**
@@ -79,24 +85,29 @@ const CreditTitle = styled.h3`
 `;
 
 const Flamingo = styled.img`
-  height: 128px;
-  width: 128px;
+  height: 100px;
+  width: 100px;
 `;
 
 const Person = styled.a`
   line-height: 1;
-  margin-left: ${space(0.75)};
-  margin-right: ${space(0.75)};
   text-align: center;
+  margin-bottom: ${space()};
+  width: 50%;
+
+  ${media.s`
+    width: 25%;
+  `}
+
   img {
-    border-radius: 32px;
+    border-radius: 50%;
     box-shadow: 0 16px 32px rgba(0,80,102,0);
     height: 96px;
     transition: box-shadow 200ms,transform 200ms ${animation.standard};
     width: 96px;
     ${media.s`
-      height: 128px;
-      width: 128px;
+      height: 96px;
+      width: 96px;
     `}
   }
   h4 {
@@ -120,6 +131,7 @@ const Person = styled.a`
 
 const PersonContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding-left: ${space()};
   padding-right: ${space()};

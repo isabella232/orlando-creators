@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
         ga('create', 'UA-89719578-1', 'auto');
-        ga('send', 'pageview');`
+        ga('send', 'pageview');`,
     };
   }
   loadTypekit() {
