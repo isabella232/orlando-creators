@@ -20,16 +20,16 @@ import { animation, color, media, space } from '../styles/style-utils';
 
 const people = [
   {
-    image: 'macbeth-studio.svg',
-    name: 'Macbeth Studio',
-    title: 'Videography',
-    url: 'http://macbethstudio.com',
-  },
-  {
     image: 'envy.svg',
     name: 'Envy',
     title: 'Concept + Website',
     url: 'http://madewithenvy.com',
+  },
+  {
+    image: 'macbeth-studio.svg',
+    name: 'Macbeth Studio',
+    title: 'Videography',
+    url: 'http://macbethstudio.com',
   },
   {
     image: 'ayana.jpg',
