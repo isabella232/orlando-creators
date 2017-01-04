@@ -61,7 +61,7 @@ const Transcript = styled.div`
   `}
 
   h2 {
-    color: ${color.blueS};
+    color: ${color.blueSS};
     font-size: 0.75em;
     margin-bottom: 0.5em;
     ${media.s`

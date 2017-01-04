@@ -30,8 +30,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  perspective: 100px;
-  transform-style: preserve-3d;
+  perspective: 1px;
 }
 
 a {
@@ -55,6 +54,7 @@ h1 {
   letter-spacing: 0.025em;
   margin-bottom: 0;
   margin-top: 0;
+
   ${media.s`
     font-size: 48px;
   `}

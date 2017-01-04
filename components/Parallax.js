@@ -26,19 +26,32 @@ const Overlay = styled.div`
   z-index: 10;
 `;
 
+const BackgroundContainer = styled.div`
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 100vh;
+  transform: translateY(-50%) translateZ(-1px)
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  transition: opacity 1000ms 500ms;
+  z-index: 1;
+`;
+
 const Background = styled.div`
   background-image: url(/static/assets/orlando.svg);
   background-position: center bottom;
   background-size: 250% auto;
   height: 100%;
   left: 0;
-  pointer-events: none;
   position: fixed;
-  right: 0;
-  top: 75vh;
-  transition: opacity 1000ms 500ms, transform 1000ms 500ms ${animation.deceleration};
-  transform: translate3D(0, -100%, 0) scale(2);
-  z-index: 1;
+  top: 0;
+  transform-origin: 50% 100%;
+  transform: translateY(100%) scale(2);
+  transition: transform 1000ms 500ms ${animation.deceleration};
+  width: 100%;
 
   ${media.s`
     background-size: 150% auto;
@@ -79,17 +92,18 @@ export default class extends Component {
       top: '100vh',
       visible: false,
     };
+    this.setTop.bind(this);
   }
   componentDidMount() {
     this.animateIn();
     this.setTop();
-    window.addEventListener('resize', this.setTop);
+  }
+  setTop() {
+    const h = this.overlay.clientHeight;
+    this.setState({ top: `${h}px` });
   }
   animateIn() {
     this.setState({ visible: true });
-  }
-  setTop() {
-    this.setState({ top: `${this.overlay.clientHeight}px` });
   }
   handleResize() {
     this.setTop();
@@ -97,12 +111,16 @@ export default class extends Component {
   render() {
     return (
       <Wrapper>
-        <Overlay innerRef={(overlay) => { this.overlay = overlay }}>{this.props.children}</Overlay>
-        <Background style={{
-          top: this.state.top,
+        <Overlay innerRef={(overlay) => { this.overlay = overlay; }}>{this.props.children}</Overlay>
+        <BackgroundContainer style={{
+          top: `calc(${this.state.top} - 100vh)`,
           opacity: `${this.state.visible ? '1' : '0'}`,
-          transform: `${this.state.visible ? 'translate3D(0, -100%, -100px) scale(2)' : 'translate3D(0, -87.5%, -100px) scale(2)'}`,
-        }} />
+        }}>
+          <Background style={{
+            transform: this.state.visible ? 'translateY(100%) scale(2)' : 'translateY(112.5%) scale(2)',
+            transformOrigin: '50% 100%',
+          }} />
+        </BackgroundContainer>
         <Colophon style={{ top: this.state.top }}>
           Made with 🍊 by <a href="http://madewithenvy.com" target="_blank"
           rel="noopener">Envy</a> and <a href="http://macbethstudio.com"
