@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "@mars/heroku-nextjs-build": "*",
-    "next": "^2.0.0-beta.11",
+    "next": "^2.0.0-beta.13",
     "styled-components": "*"
   },
   "devDependencies": {
