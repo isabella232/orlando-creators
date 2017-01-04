@@ -36,13 +36,28 @@ const Card = styled.div`
     text-align: center;
     width: 100%;
     ${media.s`
-      margin-bottom: ${space(2)};
+      margin-bottom: ${space()};
     `}
   }
 
   ${media.s`
     padding: ${space(2)};
   `}
+`;
+
+const Quote = styled.blockquote`
+  border-bottom: 2px dotted ${color.grayT};
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.25em;
+  margin-bottom: ${space(2)};
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: ${space(0.5)};
+  padding-bottom: ${space(1.5)};
+  padding-left: ${space(2)};
+  padding-right: ${space(2)};
+  text-align: center;
 `;
 
 const ArtworkContainer = styled.div`
@@ -74,16 +89,23 @@ const Transcript = styled.div`
   }
 
   p {
+    color: ${color.gray};
     font-size: 15px;
+    font-weight: 400;
   }
 `;
 
 const SocialContainer = styled.div`
   display: flex;
   justify-content: center;
+  padding-top: ${space(0.25)};
+  padding-bottom: ${space(0.5)};
 `;
 
 const Footer = styled.div`
+  border-top: 2px dotted ${color.grayT};
+  margin-top: ${space(2)};
+  padding-top: ${space()};
   text-align: center;
   width: 100%;
 
@@ -119,6 +141,10 @@ export default class extends Component {
         <Cell>
           <Card>
             <h1>{this.props.creator.name}</h1>
+            <Quote>
+              Don’t wait for an invitation. … Figure out how to get involved.
+              We need more young people to feel like they deserve a seat at&nbsp;the&nbsp;table.
+            </Quote>
             <ArtworkContainer>
               <ArtworkList creator={this.props.creator.name} artworks={this.props.artworks} />
             </ArtworkContainer>

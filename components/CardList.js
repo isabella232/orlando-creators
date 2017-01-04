@@ -55,8 +55,6 @@ const ActiveArea = styled.div`
 `;
 
 const Card = styled.div`
-  border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0,80,102,0.25);
   margin-bottom: 1em;
   overflow: hidden;
   padding-top: 56.25%;
@@ -67,7 +65,6 @@ const Card = styled.div`
 `;
 
 const PreviewContainer = styled.div`
-  border-radius: 6px;
   height: 100%;
   left: 0;
   overflow: hidden;
@@ -92,7 +89,6 @@ const PreviewContainer = styled.div`
 `;
 
 const VideoContainer = styled.div`
-  border-radius: 6px;
   height: 100%;
   left: 0;
   overflow: hidden;

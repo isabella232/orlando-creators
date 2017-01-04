@@ -35,6 +35,8 @@ export const color = {
   blueSS: '#005066',
   blueT: '#00d4ff',
   blueTT: '#f0fdff',
+  gray: '#666666',
+  grayT: '#BBBBBB',
   green: '#80a85f',
   greenS: '#34714a',
   orange: '#ff8e66',

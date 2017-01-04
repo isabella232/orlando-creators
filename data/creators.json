@@ -6,16 +6,16 @@
     "slug": "justin-mezzell",
     "social": [
       {
+        "type": "website",
+        "url": "http://justinmezzell.com"
+      },
+      {
         "type": "dribbble",
         "url": "https://dribbble.com/justinmezzell"
       },
       {
         "type": "twitter",
         "url": "https://twitter.com/justinmezzell"
-      },
-      {
-        "type": "twitch",
-        "url": "https://www.twitch.tv/justinmezzell"
       },
       {
         "type": "instagram",
