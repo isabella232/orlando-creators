@@ -3,7 +3,7 @@
  */
 
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
 
 import { color, media, space } from '../styles/style-utils';
@@ -19,12 +19,20 @@ const Container = styled.header`
   overflow: hidden;
 `;
 
+const FadeIn = keyframes`
+  to {
+    opacity: 1;
+  }
+`;
+
 const Logo = styled.img`
+  animation: ${FadeIn} 1000ms linear;
+  animation-fill-mode: forwards;
   display: block;
   height: 48px;
   margin-left: auto;
   margin-right: auto;
-  transition: opacity 500ms;
+  opacity: 0;
   width: auto;
 
   ${media.s`
@@ -52,12 +60,15 @@ const ActiveArea = styled.div`
 `;
 
 const Nav = styled.nav`
+  animation: ${FadeIn} 1000ms 500ms linear;
+  animation-fill-mode: forwards;
   align-items: center;
   display: flex;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
   max-width: calc(100% - 64px);
+  opacity: 0;
   transition: opacity 500ms 250ms;
 
   ${media.s`

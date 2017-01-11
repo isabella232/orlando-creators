@@ -9,7 +9,7 @@
  */
 
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { animation, color, media, space } from '../styles/style-utils';
 
@@ -40,17 +40,27 @@ const BackgroundContainer = styled.div`
   z-index: 1;
 `;
 
+const SlideUp = keyframes`
+  to {
+    transform: translateY(100%) scale(2);
+    transform-origin: 50% 100%;
+    opacity: 1;
+  }
+`;
+
 const Background = styled.div`
+  animation: ${SlideUp} 1000ms 500ms ${animation.deceleration};
+  animation-fill-mode: forwards;
   background-image: url(/static/assets/orlando.svg);
   background-position: center bottom;
   background-size: 250% auto;
   height: 100%;
   left: 0;
+  opacity: 0;
   position: fixed;
   top: 0;
   transform-origin: 50% 100%;
-  transform: translateY(100%) scale(2);
-  transition: transform 1000ms 500ms ${animation.deceleration};
+  transform: translateY(112%) scale(2);
   width: 100%;
 
   ${media.s`
@@ -90,12 +100,10 @@ export default class extends Component {
     this.animateIn = this.animateIn.bind(this);
     this.state = {
       top: '100vh',
-      visible: false,
     };
     this.setTop.bind(this);
   }
   componentDidMount() {
-    this.animateIn();
     this.setTop();
   }
   setTop() {
@@ -114,12 +122,8 @@ export default class extends Component {
         <Overlay innerRef={(overlay) => { this.overlay = overlay; }}>{this.props.children}</Overlay>
         <BackgroundContainer style={{
           top: `calc(${this.state.top} - 100vh)`,
-          opacity: `${this.state.visible ? '1' : '0'}`,
         }}>
-          <Background style={{
-            transform: this.state.visible ? 'translateY(100%) scale(2)' : 'translateY(112.5%) scale(2)',
-            transformOrigin: '50% 100%',
-          }} />
+          <Background />
         </BackgroundContainer>
         <Colophon style={{ top: this.state.top }}>
           Made with 🍊 by <a href="http://madewithenvy.com" target="_blank"

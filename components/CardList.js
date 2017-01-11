@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
 
 import { animation, color, media, space, typography } from '../styles/style-utils';
@@ -36,11 +36,22 @@ const Column = styled.div`
   `}
 `;
 
+const FadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 const ActiveArea = styled.div`
+  animation: ${FadeIn} 600ms 300ms linear;
+  animation-fill-mode: forwards;
   display: block;
   text-align: center;
   text-decoration: none;
-  transition: opacity 500ms;
+  opacity: 0;
 
   ${media.s`
     &:hover div div:first-child,
@@ -54,12 +65,20 @@ const ActiveArea = styled.div`
   `}
 `;
 
+const CardAnimation = keyframes`
+  to {
+    transform: translateY(0);
+  }
+`;
+
 const Card = styled.div`
+  animation: ${CardAnimation} 500ms 200ms ${animation.deceleration};
+  animation-fill-mode: forwards;
   margin-bottom: 1em;
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
-  transition: transform 400ms ${animation.deceleration};
+  transform: translateY(32px);
   user-select: none;
   z-index: 10;
 `;
@@ -112,13 +131,15 @@ const VideoContainer = styled.div`
 `;
 
 const ComingSoon = styled.div`
+  animation: ${FadeIn} 1500ms 750ms linear;
+  animation-fill-mode: forwards;
   background-color: rgba(0,80,102,0.1);
   border-radius: 8px;
   height: 0;
+  opacity: 0;
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
-  transition: opacity 1500ms 750ms;
   user-select: none;
   div {
     font-size: 0.875em;
@@ -204,19 +225,8 @@ const Video = styled.video`
 export default class extends Component {
   constructor(props) {
     super(props);
-    this.animateIn = this.animateIn.bind(this);
     this.pauseVideo = this.pauseVideo.bind(this);
     this.playVideo = this.playVideo.bind(this);
-
-    this.state = {
-      visible: false,
-    };
-  }
-  componentDidMount() {
-    this.animateIn();
-  }
-  animateIn() {
-    this.setState({ visible: true });
   }
   pauseVideo() {
     this.video.pause();
@@ -230,11 +240,8 @@ export default class extends Component {
         {this.props.cards.map((creator, key) => (
           <Column key={key}>
             <Link href={`/creator/${creator.slug}`}>
-              <ActiveArea style={{ opacity: this.state.visible ? '1' : '0' }}>
-                <Card style={{
-                  backgroundColor: `${creator.color}`,
-                  transform: `${this.state.visible ? 'translateY(0)' : 'translateY(32px)'}`,
-                }}>
+              <ActiveArea>
+                <Card style={{ backgroundColor: `${creator.color}` }}>
                   <PreviewContainer style={{ backgroundImage: `url(/static/assets/${creator.slug}.jpg)` }}>
                     <Icon src={`/static/assets/${creator.slug}.png`} alt={creator.name} />
                   </PreviewContainer>
@@ -253,7 +260,7 @@ export default class extends Component {
           </Column>
         ))}
         <Column>
-          <ComingSoon style={{ opacity: `${this.state.visible ? '1' : '0'}` }}>
+          <ComingSoon>
             <div>
               <img src="/static/assets/alarm.svg" role="presentation" />
               Coming soon!
