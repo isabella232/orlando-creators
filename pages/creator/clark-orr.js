@@ -1,0 +1,45 @@
+import React from 'react';
+import Head from 'next/head';
+
+import Header from '../../components/Header';
+import Creator from '../../components/Creator';
+import Parallax from '../../components/Parallax';
+
+import artworks from '../../artworks/clark-orr';
+import transcript from '../../transcripts/clark-orr';
+import creators from '../../data/creators.json';
+
+const creator = creators.find(item => (item.slug === 'clark-orr'));
+const pageTitle = 'Clark Orr 🌴 Orlando Creators';
+
+export default class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      artworks,
+      creator,
+      transcript,
+    };
+  }
+  render() {
+    return (
+      <Parallax>
+        <main rel="main">
+          <Head>
+            <title>{pageTitle}</title>
+            <meta property="og:title" content={pageTitle} />
+            <meta property="og:url" content={`http://www.orlandocreators.com/creator/${creator.slug}`} />
+            <meta property="og:image" content={`/static/assets/${creator.slug}-preview.jpg`} />
+            <meta property="twitter:image" content={`/static/assets/${creator.slug}-preview.jpg`} />
+          </Head>
+          <Header />
+          <Creator
+            creator={this.state.creator}
+            transcript={this.state.transcript}
+            artworks={this.state.artworks}
+          />
+        </main>
+      </Parallax>
+    );
+  }
+}

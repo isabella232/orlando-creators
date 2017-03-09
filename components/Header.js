@@ -33,14 +33,12 @@ const Logo = styled.img`
   margin-left: auto;
   margin-right: auto;
   opacity: 0;
+  position: relative;
   width: auto;
+  z-index: 10;
 
   ${media.s`
     height: 64px;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
-    top: 24px;
   `}
 `;
 
@@ -60,20 +58,26 @@ const ActiveArea = styled.div`
 `;
 
 const Nav = styled.nav`
+  align-items: center;
   animation: ${FadeIn} 1000ms 500ms linear;
   animation-fill-mode: forwards;
-  align-items: center;
   display: flex;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  left: 0;
+  margin-left: ${space()}
+  margin-right: ${space()}
   max-width: calc(100% - 64px);
   opacity: 0;
+  padding: 0;
   transition: opacity 500ms 250ms;
+  width: 100%;
 
   ${media.s`
     justify-content: flex-end;
+    margin: 0;
     padding-right: 32px;
+    position: absolute;
+    top: ${space()};
   `}
 `;
 
@@ -102,10 +106,12 @@ export default class extends Component {
     return (
       <Container>
         <Link href="/">
-          <Logo
-            src="/static/assets/orlando-creators.svg"
-            alt="Orlando Creators"
-          />
+          <a>
+            <Logo
+              src="/static/assets/orlando-creators.svg"
+              alt="Orlando Creators"
+            />
+          </a>
         </Link>
         <Nav>
           <Link href="/about">

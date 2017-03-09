@@ -10,6 +10,8 @@
 
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
+import Rx from 'rx-lite';
+import Dom from 'rx-dom';
 
 import { animation, color, media, space } from '../styles/style-utils';
 
@@ -97,24 +99,25 @@ const Colophon = styled.div`
 export default class extends Component {
   constructor(props) {
     super(props);
-    this.animateIn = this.animateIn.bind(this);
     this.state = {
       top: '100vh',
     };
+    this.handleResize.bind(this)
     this.setTop.bind(this);
   }
   componentDidMount() {
     this.setTop();
-  }
-  setTop() {
-    const h = this.overlay.clientHeight;
-    this.setState({ top: `${h}px` });
-  }
-  animateIn() {
-    this.setState({ visible: true });
+    window.addEventListener('resize', this.handleResize);
   }
   handleResize() {
-    this.setTop();
+    const source = Rx.DOM.resize(window);
+     x
+    const subscription = source.subscribe();
+  }
+  setTop() {
+    if(!this.overlay) return false;
+    const h = this.overlay.clientHeight;
+    this.setState({ top: `${h}px` });
   }
   render() {
     return (

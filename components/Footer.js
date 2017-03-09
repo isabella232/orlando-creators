@@ -36,16 +36,6 @@ const Colophon = styled.div`
 export default class extends Component {
   constructor(props) {
     super(props);
-    this.state = { top: '100vh' };
-  }
-  setTop() {
-    this.setState({ top: `${this.footer.clientHeight}px` });
-  }
-  handleResize() {
-    this.setTop();
-  }
-  componentDidMount() {
-    this.setTop();
   }
 
   render() {

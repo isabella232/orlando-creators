@@ -246,7 +246,7 @@ export default class extends Component {
                     <Icon src={`/static/assets/${creator.slug}.png`} alt={creator.name} />
                   </PreviewContainer>
                   <VideoContainer>
-                    <Video innerRef={(video) => { this.video = video }} loop={true} preload="none">
+                    <Video innerRef={(video) => { this.video = video; }} loop={true} preload="none">
                       <source src={`/static/assets/${creator.slug}.mp4`} type="video/mp4" />
                     </Video>
                     <Icon src={`/static/assets/${creator.slug}.gif`} alt={creator.name} />
