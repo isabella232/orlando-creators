@@ -47,17 +47,23 @@ const Card = styled.div`
 
 const Quote = styled.blockquote`
   border-bottom: 2px dotted ${color.grayT};
-  font-weight: 400;
+  font-size: 1em;
   font-style: italic;
-  font-size: 1.25em;
+  font-weight: 400;
   margin-bottom: ${space(2)};
   margin-left: 0;
   margin-right: 0;
   margin-top: ${space(0.5)};
   padding-bottom: ${space(1.5)};
-  padding-left: ${space(2)};
-  padding-right: ${space(2)};
+  padding-left: ${space()};
+  padding-right: ${space()};
   text-align: center;
+
+  ${media.s`
+    font-size: 1.25em;
+    padding-left: ${space(2)};
+    padding-right: ${space(2)};
+  `}
 `;
 
 const ArtworkContainer = styled.div`
