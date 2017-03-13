@@ -1,6 +1,5 @@
 /**
  * Parallax
- *
  * Scrollable viewport
  */
 
@@ -104,7 +103,7 @@ export default class extends Component {
   }
   componentDidMount() {
     this.setTop();
-    window.addEventListener('resize', this.setTop);
+    window.addEventListener('resize', () => this.setTop());
   }
   setTop() {
     if(!this.overlay) return false;
