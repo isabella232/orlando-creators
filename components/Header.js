@@ -44,6 +44,7 @@ const Logo = styled.img`
 
 const ActiveArea = styled.div`
   color: ${color.black};
+  cursor: pointer;
   display: block;
   font-size: 14px;
   font-weight: 700;
@@ -79,10 +80,6 @@ const Nav = styled.nav`
     position: absolute;
     top: ${space()};
   `}
-
-  a {
-    cursor: pointer;
-  }
 `;
 
 /**

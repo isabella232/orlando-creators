@@ -232,23 +232,17 @@ export default class extends Component {
     this.pauseVideo = this.pauseVideo.bind(this);
     this.playVideo = this.playVideo.bind(this);
   }
-  pauseVideo() {
-    this.video.pause();
+  pauseVideo(key) {
+    //this.container.querySelectorAll('video')[key].pause();
   }
-  playVideo() {
-    this.video.play();
-  }
-  loopVideo() {
-    this.video.addEventListener('ended', () => {
-      this.video.load();
-      this.video.play();
-    });
+  playVideo(key) {
+    //this.container.querySelectorAll('video')[key].play();
   }
   render() {
     return (
-      <Container onMouseEnter={this.playVideo} onMouseLeave={this.pauseVideo}>
+      <Container innerRef={(container) => { this.container = container; }}>
         {this.props.cards.map((creator, key) => (
-          <Column key={key}>
+          <Column key={key} onMouseEnter={this.playVideo(key)} onMouseLeave={this.pauseVideo(key)}>
             <Link href={`/creator/${creator.slug}`}>
               <ActiveArea>
                 <Card style={{ backgroundColor: `${creator.color}` }}>
@@ -256,7 +250,7 @@ export default class extends Component {
                     <Icon src={`/static/assets/${creator.slug}.png`} alt={creator.name} />
                   </PreviewContainer>
                   <VideoContainer color={creator.color2}>
-                    <Video innerRef={(video) => { this.video = video; }} loop={true} preload="auto">
+                    <Video loop={true} preload="auto">
                       <source src={`/static/assets/${creator.slug}.mp4`} type="video/mp4" />
                     </Video>
                     <Icon src={`/static/assets/${creator.slug}.gif`} alt={creator.name} />
