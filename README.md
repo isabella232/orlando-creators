@@ -23,3 +23,10 @@ will reflect the style of this repo.
 Add the Heroku app `orlando-creators` as a remote on the project,
 and push `master` to that remote when you’re ready to deploy. Node
 scripts handle the rest.
+
+## License
+
+The name Orlando Creators™, Orlando Creators logo, and all related media and
+assets are © Envy 2017. Do not use without permission.
+
+This code, however: steal whatever you want!
