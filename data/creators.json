@@ -1,34 +1,8 @@
 [
   {
-    "added": "2017-01-03 05:00:00",
-    "color": "#68cade",
-    "name": "Justin Mezzell",
-    "slug": "justin-mezzell",
-    "social": [
-      {
-        "type": "website",
-        "url": "http://justinmezzell.com"
-      },
-      {
-        "type": "dribbble",
-        "url": "https://dribbble.com/justinmezzell"
-      },
-      {
-        "type": "twitter",
-        "url": "https://twitter.com/justinmezzell"
-      },
-      {
-        "type": "instagram",
-        "url": "https://instagram.com/justinmezzell"
-      }
-    ],
-    "quote": "Don’t wait for an invitation. … Figure out how to get involved. We need more young people to feel like they deserve a seat at&nbsp;the&nbsp;table.",
-    "title": "Art Director at Code School",
-    "videoID": "u8mi_ZF1XGY"
-  },
-  {
     "added": "2016-03-13 05:00:00",
-    "color": "#68cade",
+    "color": "#f89a1d",
+    "color2": "#fb7a54",
     "name": "Clark Orr",
     "slug": "clark-orr",
     "social": [
@@ -52,5 +26,33 @@
     "title": "Independent Illustrator & Designer",
     "quote": "There’s something in the water [in Orlando] … It’s really on par with stuff that’s going on in New York and LA … A lot of people are doing stuff out here even better than some of those places.",
     "videoID": "9OF6GfdNfXA"
+  },
+  {
+    "added": "2017-01-03 05:00:00",
+    "color": "#68cade",
+    "color2": "#005066",
+    "name": "Justin Mezzell",
+    "slug": "justin-mezzell",
+    "social": [
+      {
+        "type": "website",
+        "url": "http://justinmezzell.com"
+      },
+      {
+        "type": "dribbble",
+        "url": "https://dribbble.com/justinmezzell"
+      },
+      {
+        "type": "twitter",
+        "url": "https://twitter.com/justinmezzell"
+      },
+      {
+        "type": "instagram",
+        "url": "https://instagram.com/justinmezzell"
+      }
+    ],
+    "quote": "Don’t wait for an invitation. … Figure out how to get involved. We need more young people to feel like they deserve a seat at&nbsp;the&nbsp;table.",
+    "title": "Art Director at Code School",
+    "videoID": "u8mi_ZF1XGY"
   }
 ]

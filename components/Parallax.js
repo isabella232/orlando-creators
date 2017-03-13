@@ -10,8 +10,6 @@
 
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
-import Rx from 'rx-lite';
-import Dom from 'rx-dom';
 
 import { animation, color, media, space } from '../styles/style-utils';
 
@@ -102,17 +100,11 @@ export default class extends Component {
     this.state = {
       top: '100vh',
     };
-    this.handleResize.bind(this)
     this.setTop.bind(this);
   }
   componentDidMount() {
     this.setTop();
-    window.addEventListener('resize', this.handleResize);
-  }
-  handleResize() {
-    const source = Rx.DOM.resize(window);
-     x
-    const subscription = source.subscribe();
+    window.addEventListener('resize', this.setTop);
   }
   setTop() {
     if(!this.overlay) return false;
