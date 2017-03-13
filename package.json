@@ -8,8 +8,9 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
+    "heroku-postbuild": "heroku-nextjs-build",
     "postinstall": "heroku-nextjs-build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
