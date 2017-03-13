@@ -48,6 +48,7 @@ const FadeIn = keyframes`
 const ActiveArea = styled.div`
   animation: ${FadeIn} 600ms 300ms linear;
   animation-fill-mode: forwards;
+  cursor: pointer;
   display: block;
   text-align: center;
   text-decoration: none;
@@ -77,7 +78,6 @@ const Card = styled.div`
   animation-fill-mode: forwards;
   animation-name: ${CardAnimation};
   animation-timing-function: ${animation.deceleration};
-  cursor: pointer;
   margin-bottom: 1em;
   overflow: hidden;
   padding-top: 56.25%;
@@ -229,28 +229,29 @@ const Video = styled.video`
 export default class extends Component {
   constructor(props) {
     super(props);
+    this.videos = [];
     this.pauseVideo = this.pauseVideo.bind(this);
     this.playVideo = this.playVideo.bind(this);
   }
   pauseVideo(key) {
-    //this.container.querySelectorAll('video')[key].pause();
+    this.videos[key].pause();
   }
   playVideo(key) {
-    //this.container.querySelectorAll('video')[key].play();
+    this.videos[key].play();
   }
   render() {
     return (
-      <Container innerRef={(container) => { this.container = container; }}>
+      <Container>
         {this.props.cards.map((creator, key) => (
-          <Column key={key} onMouseEnter={this.playVideo(key)} onMouseLeave={this.pauseVideo(key)}>
+          <Column key={key}>
             <Link href={`/creator/${creator.slug}`}>
-              <ActiveArea>
+              <ActiveArea onMouseEnter={() => this.playVideo(key)} onMouseLeave={() => this.pauseVideo(key)}>
                 <Card style={{ backgroundColor: `${creator.color}` }}>
                   <PreviewContainer color={creator.color2} style={{ backgroundImage: `url(/static/assets/${creator.slug}.jpg)` }}>
                     <Icon src={`/static/assets/${creator.slug}.png`} alt={creator.name} />
                   </PreviewContainer>
                   <VideoContainer color={creator.color2}>
-                    <Video loop={true} preload="auto">
+                    <Video innerRef={video => this.videos[key] = video} loop={true} preload="auto">
                       <source src={`/static/assets/${creator.slug}.mp4`} type="video/mp4" />
                     </Video>
                     <Icon src={`/static/assets/${creator.slug}.gif`} alt={creator.name} />
