@@ -28,7 +28,7 @@ export default `
     href="https://www.frenchpaper.com" target="_blank">French Paper</a> in Michigan
     donated the paper and we just went to work. We put it up online and I think we
     raised over $10,000 for the victims of Pulse and their families and that
-    would’ve been a make better use of our time than spending $50 or $100 on water
+    would’ve been a much better use of our time than spending $50 or $100 on water
     or standing in line when they were turning people away. I felt very, very lucky
     to contribute and help out when our town was most in need.
   </p>
