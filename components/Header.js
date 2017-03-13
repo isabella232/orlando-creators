@@ -79,6 +79,10 @@ const Nav = styled.nav`
     position: absolute;
     top: ${space()};
   `}
+
+  a {
+    cursor: pointer;
+  }
 `;
 
 /**

@@ -23,7 +23,7 @@ export default `
     I could spend my time quickly. So I <a
     href="https://store.mamas-sauce.com/products/the-city-beautiful"
     target="_blank">designed a print</a>—an Orlando print—the morning after I found
-    out and hit up <a href="http://mamas-sauce.com" target="_blank">Mama’s Sauce
+    out and hit up <a href="http://mamas-sauce.com" target="_blank">Mama’s Sauce</a>
     here in Orlando and they donated the printing cost and our friends <a
     href="https://www.frenchpaper.com" target="_blank">French Paper</a> in Michigan
     donated the paper and we just went to work. We put it up online and I think we

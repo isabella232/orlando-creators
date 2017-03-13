@@ -238,6 +238,12 @@ export default class extends Component {
   playVideo() {
     this.video.play();
   }
+  loopVideo() {
+    this.video.addEventListener('ended', () => {
+      this.video.load();
+      this.video.play();
+    });
+  }
   render() {
     return (
       <Container onMouseEnter={this.playVideo} onMouseLeave={this.pauseVideo}>
@@ -250,7 +256,7 @@ export default class extends Component {
                     <Icon src={`/static/assets/${creator.slug}.png`} alt={creator.name} />
                   </PreviewContainer>
                   <VideoContainer color={creator.color2}>
-                    <Video innerRef={(video) => { this.video = video; }} loop={true} preload="none">
+                    <Video innerRef={(video) => { this.video = video; }} loop={true} preload="auto">
                       <source src={`/static/assets/${creator.slug}.mp4`} type="video/mp4" />
                     </Video>
                     <Icon src={`/static/assets/${creator.slug}.gif`} alt={creator.name} />
