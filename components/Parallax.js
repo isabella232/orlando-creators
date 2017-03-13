@@ -97,7 +97,6 @@ const Colophon = styled.div`
 export default class extends Component {
   constructor(props) {
     super(props);
-    this.animateIn = this.animateIn.bind(this);
     this.state = {
       top: '100vh',
     };
@@ -105,16 +104,12 @@ export default class extends Component {
   }
   componentDidMount() {
     this.setTop();
+    window.addEventListener('resize', this.setTop);
   }
   setTop() {
+    if(!this.overlay) return false;
     const h = this.overlay.clientHeight;
     this.setState({ top: `${h}px` });
-  }
-  animateIn() {
-    this.setState({ visible: true });
-  }
-  handleResize() {
-    this.setTop();
   }
   render() {
     return (

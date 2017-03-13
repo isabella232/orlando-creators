@@ -141,10 +141,7 @@ export default class extends Component {
         <Cell>
           <Card>
             <h1>{this.props.creator.name}</h1>
-            <Quote>
-              Don’t wait for an invitation. … Figure out how to get involved.
-              We need more young people to feel like they deserve a seat at&nbsp;the&nbsp;table.
-            </Quote>
+            <Quote>{this.props.creator.quote}</Quote>
             <ArtworkContainer>
               <ArtworkList creator={this.props.creator.name} artworks={this.props.artworks} />
             </ArtworkContainer>

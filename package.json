@@ -1,33 +1,35 @@
 {
   "name": "orlando-creators",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Showcase of Orlando artists",
   "author": "drew@pow.rs",
   "license": "ISC",
   "main": "index.js",
   "scripts": {
     "build": "next build",
-    "dev": "webpack --watch | next",
+    "dev": "next",
     "postinstall": "heroku-nextjs-build",
-    "start": "next start -p $PORT",
+    "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-    "node": "7.3.0"
+    "node": "7.7.1"
   },
   "cacheDirectories": [
     "nextjs/node_modules"
   ],
   "dependencies": {
     "@mars/heroku-nextjs-build": "*",
-    "next": "^2.0.0-beta.16",
+    "next": "^2.0.0-beta.36",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "styled-components": "*"
   },
   "devDependencies": {
     "eslint": "*",
     "eslint-config-airbnb": "*",
     "eslint-plugin-import": "*",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-jsx-a11y": "3.0.2",
     "eslint-plugin-react": "*",
     "find-up": "*"
   },
