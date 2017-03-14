@@ -35,7 +35,7 @@ const people = [
     image: 'ayana.jpg',
     name: 'Ayana Campbell',
     title: 'Animation + Design',
-    url: 'https://twitter.com/_ayanacampbell',
+    url: 'http://ayanacampbell.com',
   },
   {
     image: 'drew.jpg',
