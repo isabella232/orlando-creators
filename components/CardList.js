@@ -102,12 +102,22 @@ const PreviewContainer = styled.div`
     border-radius: 50%;
     bottom: 0;
     content: "";
-    height: ${space(10)};
+    height: calc(62.5vw - ${space()});
     left: 0;
     position: absolute;
     transform: translate(-50%, 65%);
-    width: ${space(10)};
+    width: calc(62.5vw - ${space()});
     z-index: 10;
+
+    ${media.s`
+      height: calc(37.5vw - ${space(2)});
+      width: calc(37.5vw - ${space(2)});
+    `}
+
+    ${media.l`
+      height: ${space(10)};
+      width: ${space(10)};
+    `}
   }
 `;
 
