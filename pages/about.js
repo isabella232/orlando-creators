@@ -38,6 +38,12 @@ const people = [
     url: 'http://ayanacampbell.com',
   },
   {
+    image: 'morgan.jpg',
+    name: 'Morgan Walker',
+    title: 'Director',
+    url: 'https://vimeo.com/morganwalker',
+  },
+  {
     image: 'drew.jpg',
     name: 'Drew Powers',
     title: 'Code + Design',
@@ -96,7 +102,10 @@ const Person = styled.a`
   width: 50%;
 
   ${media.s`
-    width: 25%;
+    width: 33.3333%;
+  `}
+  ${media.l`
+    width: 20%;
   `}
 
   img {
