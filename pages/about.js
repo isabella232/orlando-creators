@@ -40,7 +40,7 @@ const people = [
   {
     image: 'morgan.jpg',
     name: 'Morgan Walker',
-    title: 'Director',
+    title: 'Videographer + Editor',
     url: 'https://vimeo.com/morganwalker',
   },
   {
