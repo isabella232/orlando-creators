@@ -15,6 +15,10 @@ export default () => (
       <meta property="og:url" content="http://www.orlandocreators.com" />
       <meta property="og:image" content="/static/assets/orlando-creators.jpg" />
       <meta property="twitter:image" content="/static/assets/orlando-creators.jpg" />
+      <meta property="twitter:site_name" content="http://www.orlandocreators.com" />
+      <meta property="twitter:site" content="@orlandocreators" />
+      <meta property="twitter:card" content="summary" />
+      <meta property="twitter:description" content="An interview series celebrating the designers and visual artists that call the City Beautiful “home.”" />
     </Head>
     <main rel="main">
       <Header />

@@ -31,6 +31,10 @@ export default class extends React.Component {
             <meta property="og:url" content={`http://www.orlandocreators.com/creator/${creator.slug}`} />
             <meta property="og:image" content={`/static/assets/${creator.slug}-preview.jpg`} />
             <meta property="twitter:image" content={`/static/assets/${creator.slug}-preview.jpg`} />
+            <meta property="twitter:site_name" content="http://www.orlandocreators.com" />
+            <meta property="twitter:site" content="@orlandocreators" />
+            <meta property="twitter:card" content="summary" />
+            <meta property="twitter:description" content={creator.description} />
           </Head>
           <Header />
           <Creator
