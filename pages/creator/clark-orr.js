@@ -33,7 +33,7 @@ export default class extends React.Component {
             <meta property="twitter:image" content={`/static/assets/${creator.slug}-preview.jpg`} />
             <meta property="twitter:site_name" content="http://www.orlandocreators.com" />
             <meta property="twitter:site" content="@orlandocreators" />
-            <meta property="twitter:card" content="summary" />
+            <meta property="twitter:card" content="summary_large_image" />
             <meta property="twitter:description" content={creator.description} />
           </Head>
           <Header />

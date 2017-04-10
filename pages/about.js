@@ -176,7 +176,7 @@ export default class extends React.Component {
           <meta property="twitter:image" content="/static/assets/orlando-creators.jpg" />
           <meta property="twitter:site_name" content="http://www.orlandocreators.com" />
           <meta property="twitter:site" content="@orlandocreators" />
-          <meta property="twitter:card" content="summary" />
+          <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:description" content="An interview series celebrating the designers and visual artists that call the City Beautiful “home.”" />
         </Head>
         <main rel="main">
