@@ -1,5 +1,33 @@
 [
   {
+    "added": "2016-04-10 05:00:00",
+    "color": "#85ffe9",
+    "color2": "#43D1B7",
+    "name": "Ashley Heafy",
+    "slug": "ashley-heafy",
+    "social": [
+      {
+        "type": "website",
+        "url": "http://www.ashleyheafy.com"
+      },
+      {
+        "type": "dribbble",
+        "url": "https://dribbble.com/ashleyheafy"
+      },
+      {
+        "type": "twitter",
+        "url": "https://twitter.com/ashleyannheafy"
+      },
+      {
+        "type": "instagram",
+        "url": "https://instagram.com/metalandhoney"
+      }
+    ],
+    "title": "Independent Graphic Designer",
+    "quote": "If you involve yourself in the community and find your place, then you’ll be successful.",
+    "videoID": "q0L6mTh0jHc"
+  },
+  {
     "added": "2016-03-13 05:00:00",
     "color": "#f89a1d",
     "color2": "#fb7a54",
