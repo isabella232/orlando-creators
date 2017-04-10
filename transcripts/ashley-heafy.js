@@ -49,7 +49,7 @@ export default `
   </p>
   <p>
     But you know, legislation can always be repealed. It can always be edited
-    and changed. But the Constitution needs an Amendment for equality.Until that
+    and changed. But the Constitution needs an Amendment for equality. Until that
     day happens, feminism is necessary.
   </p>
   <h2>What are some things your excited about in Orlando?</h2>
