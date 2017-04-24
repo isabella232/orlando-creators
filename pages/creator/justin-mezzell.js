@@ -50,14 +50,15 @@ export default class extends React.Component {
             <meta property="og:video:type" content="text/html" />
             <meta property="og:video:url" content={`https://www.youtube.com/embed/${creator.videoID}`} />
             <meta property="og:video:width" content="1280" />
-            <meta name="twitter:image" content={`/static/assets/${creator.slug}-preview.jpg`} />
-            <meta name="twitter:site_name" content="http://www.orlandocreators.com" />
-            <meta name="twitter:site" content="@orlandocreators" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:description" content={creator.description} />
+            <meta name="twitter:image" content={`/static/assets/${creator.slug}-preview.jpg`} />
             <meta name="twitter:player" content={`https://www.youtube.com/embed/${creator.videoID}`} />
-            <meta name="twitter:player:width" content="1280" />
             <meta name="twitter:player:height" content="720" />
+            <meta name="twitter:player:width" content="1280" />
+            <meta name="twitter:site" content="@orlandocreators" />
+            <meta name="twitter:site_name" content="http://www.orlandocreators.com" />
+            <meta name="twitter:title" content={pageTitle} />
           </Head>
           <Header />
           <Creator
