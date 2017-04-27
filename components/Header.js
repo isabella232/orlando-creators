@@ -105,12 +105,14 @@ export default class extends Component {
   }
   render() {
     return (
-      <Container>
+      <Container itemProp="partOfTVSeries" itemScope itemType="https://schema.org/TVSeries">
         <Link href="/">
           <a>
             <Logo
               src="/static/assets/orlando-creators.svg"
               alt="Orlando Creators"
+              itemProp="name"
+              content="Orlando Creators"
             />
           </a>
         </Link>

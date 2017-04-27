@@ -136,7 +136,10 @@ export default class extends Component {
   }
   render() {
     return (
-      <div>
+      <div itemScope={true} itemType="https://schema.org/TVEpisode">
+        <meta itemProp="episodeNumber" content={this.props.episode} />
+        <meta itemProp="datePublished" content={this.props.creator.added} />
+        <meta itemProp="image" content={`http://orlandocreators.com/static/assets/${this.props.creator.slug}-preview.jpg`} />
         <Head>
           <meta type="og:image" content={`/static/assets/${this.props.creator.slug}-preview.jpg`} />
           <meta type="twitter:image" content={`/static/assets/${this.props.creator.slug}-preview.jpg`} />
@@ -146,14 +149,14 @@ export default class extends Component {
         </Cell>
         <Cell>
           <Card>
-            <h1>{this.props.creator.name}</h1>
+            <h1 itemProp="name">{this.props.creator.name}</h1>
             <Quote>{this.props.creator.quote}</Quote>
             <ArtworkContainer>
               <ArtworkList creator={this.props.creator.name} artworks={this.props.artworks} />
             </ArtworkContainer>
             <Transcript dangerouslySetInnerHTML={this.setTranscript()} />
-            <Footer>
-              <h5>{`Connect with ${this.props.creator.name}`}</h5>
+            <Footer itemProp="actor" itemScope itemType="https://schema.org/Person">
+              <h5 itemProp="name">{`Connect with ${this.props.creator.name}`}</h5>
               <SocialContainer>
                 {this.props.creator.social.map((social, key) => (
                   <Social

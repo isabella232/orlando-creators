@@ -63,6 +63,7 @@ export default class extends React.Component {
           <Header />
           <Creator
             creator={this.state.creator}
+            episode={2}
             transcript={this.state.transcript}
             artworks={this.state.artworks}
           />
