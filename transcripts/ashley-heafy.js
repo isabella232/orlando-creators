@@ -34,7 +34,10 @@ export default `
     I think it’s important for everyone in their life, at some point, if you live
     in a Western country to visit an Eastern country.
   </p>
-  <h2>Can you pin it down to what the major difference is between Eastern and Western culture?</h2>
+  <h2>
+    Can you pin it down to what the major difference is between Eastern and
+    Western culture?
+  </h2>
   <p>
     Oh my gosh! People are so nice! Can I say this? I never get cat-called in
     Japan. Never. Because no one would ever do that. No one would ever objectify
@@ -52,9 +55,9 @@ export default `
     and changed. But the Constitution needs an Amendment for equality. Until that
     day happens, feminism is necessary.
   </p>
-  <h2>What are some things your excited about in Orlando?</h2>
+  <h2>What are some things you’re excited about in Orlando?</h2>
   <p>
-    I think Orlando has incredible community for business and creatives.
+    Orlando has an incredible community for business and creatives.
   </p>
   <h2>What advice do you have for upcoming generations of Orlando Creators?</h2>
   <p>
