@@ -10,7 +10,7 @@ import transcript from '../../transcripts/clark-orr';
 import creators from '../../data/creators.json';
 
 const creator = creators.find(item => (item.slug === 'clark-orr'));
-const pageTitle = 'Clark Orr 🌴 Orlando Creators';
+const pageTitle = 'Clark Orr Interview (Episode 002)';
 
 export default class extends React.Component {
   constructor(props) {

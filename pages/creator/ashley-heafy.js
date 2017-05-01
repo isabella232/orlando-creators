@@ -10,7 +10,7 @@ import transcript from '../../transcripts/ashley-heafy';
 import creators from '../../data/creators.json';
 
 const creator = creators.find(item => (item.slug === 'ashley-heafy'));
-const pageTitle = 'Ashley Heafy 🌴 Orlando Creators';
+const pageTitle = 'Ashley Heafy Interview (Episode 003)';
 
 export default class extends React.Component {
   constructor(props) {

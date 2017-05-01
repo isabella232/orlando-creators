@@ -5,7 +5,7 @@ import CreatorsList from '../containers/CreatorsList';
 import Header from '../components/Header';
 import Parallax from '../components/Parallax';
 
-const pageTitle = 'Orlando Creators 🌴 an interview series featuring Orlando-based designers and artists';
+const pageTitle = 'Interview series featuring Orlando designers and artists 🌴';
 
 export default () => (
   <Parallax>

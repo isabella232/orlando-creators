@@ -10,7 +10,7 @@ import transcript from '../../transcripts/justin-mezzell';
 import creators from '../../data/creators.json';
 
 const creator = creators.find(item => (item.slug === 'justin-mezzell'));
-const pageTitle = 'Justin Mezzell 🌴 Orlando Creators';
+const pageTitle = 'Justin Mezzell Interview (Episode 001)';
 
 export default class extends React.Component {
   constructor(props) {

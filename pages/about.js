@@ -162,7 +162,7 @@ const Summary = styled.p`
   text-align: left;
 `;
 
-const pageTitle = 'Orlando Creators 🌴';
+const pageTitle = 'Interview series featuring Orlando designers and illustrators 🌴';
 
 export default class extends React.Component {
   render() {
