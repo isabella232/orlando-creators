@@ -110,7 +110,7 @@ const SocialContainer = styled.div`
 
 const Footer = styled.div`
   border-top: 2px dotted ${color.grayT};
-  margin-top: ${space(2)};
+  margin-top: ${space()};
   padding-top: ${space()};
   text-align: center;
   width: 100%;

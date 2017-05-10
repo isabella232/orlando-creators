@@ -72,7 +72,6 @@ export default class extends Component {
   constructor(props) {
     super(props);
     this.zoom = this.zoom.bind(this);
-
     this.state = { zoomed: -1 };
   }
   zoom(key) {

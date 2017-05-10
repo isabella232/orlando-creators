@@ -97,29 +97,34 @@ export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      top: '100vh',
+      bodyHeight: '100vh',
     };
-    this.setTop.bind(this);
+    this.setHeight.bind(this);
   }
   componentDidMount() {
-    this.setTop();
-    window.addEventListener('resize', () => this.setTop());
+    this.setHeight();
+    window.addEventListener('resize', () => this.setHeight());
   }
-  setTop() {
+  componentDidUpdate() {
+    this.setHeight();
+  }
+  setHeight() {
     if(!this.overlay) return false;
-    const h = this.overlay.clientHeight;
-    this.setState({ top: `${h}px` });
+    let height = `${this.overlay.clientHeight}px`;
+    if(height !== this.state.bodyHeight) {
+      this.setState({ bodyHeight: height });
+    }
   }
   render() {
     return (
       <Wrapper>
         <Overlay innerRef={(overlay) => { this.overlay = overlay; }}>{this.props.children}</Overlay>
         <BackgroundContainer style={{
-          top: `calc(${this.state.top} - 100vh)`,
+          top: `calc(${this.state.bodyHeight} - 100vh)`,
         }}>
           <Background />
         </BackgroundContainer>
-        <Colophon style={{ top: this.state.top }}>
+        <Colophon style={{ top: this.state.bodyHeight }}>
           Made with 🍊 by <a href="http://madewithenvy.com" target="_blank"
           rel="noopener">Envy</a> and <a href="http://macbethstudio.com"
           target="_blank" rel="noopener">Macbeth Studio</a>
