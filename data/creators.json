@@ -1,5 +1,30 @@
 [
   {
+    "added": "2016-05-10 05:00:00",
+    "color": "#f89a1d",
+    "color2": "#fb7a54",
+    "name": "Patrick Michael Chin",
+    "slug": "patrick-michael-chin",
+    "social": [
+      {
+        "type": "instagram",
+        "url": "https://instagram.com/iampatrickchin"
+      },
+      {
+        "type": "website",
+        "url": "http://www.patrickmichaelchin.com"
+      },
+      {
+        "type": "twitter",
+        "url": "https://twitter.com/iampatrickchin"
+      }
+    ],
+    "title": "Independent Photographer",
+    "description": "We interview Patrick Michael Chin about the necessity of mentors for creatives’ lives, creativity trying to make things better than they really are, and the creative boon happening in Orlando.",
+    "quote": "Orlando’s in a really cool creative time: it’s a tight-knit community that’s trying to help each other. If you have something you want to try, there’s a lot of people that want to see it work.",
+    "videoID": "4SHMOZO1KFQ"
+  },
+  {
     "added": "2016-04-10 05:00:00",
     "color": "#85ffe9",
     "color2": "#43D1B7",

@@ -53,7 +53,7 @@ const Quote = styled.blockquote`
   margin-bottom: ${space(2)};
   margin-left: 0;
   margin-right: 0;
-  margin-top: ${space(0.5)};
+  margin-top: 0;
   padding-bottom: ${space(1.5)};
   padding-left: ${space()};
   padding-right: ${space()};

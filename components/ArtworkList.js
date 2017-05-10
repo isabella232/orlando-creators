@@ -11,6 +11,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { animation, color, media, space } from '../styles/style-utils';
 
+const zoomedOutTransition = `transform 350ms ${animation.standard}, z-index 0ms 350ms`;
+const zoomedInTransition = `transform 350ms ${animation.standard}`;
+
 const Artwork = styled.div`
   margin-bottom: 2em;
   text-align: center;
@@ -28,26 +31,25 @@ const ImageContainer = styled.div`
   background-color: ${color.blueTT};
   border-radius: 8px;
   cursor: zoom-in;
-  height: 0;
   margin-bottom: ${space(0.5)};
-  padding-top: 75%;
-  position: relative;
 
   img {
     border-radius: 8px;
     box-shadow: 0 ${space(0.25)} ${space()} rgba(0, 167, 201, 0.3);
-    left: 0;
-    position: absolute;
-    top: 0;
-    transition: transform 350ms ${animation.standard}, z-index 0ms 150ms;
+    transition: ${zoomedOutTransition};
     width: 100%;
+    position: relative;
     will-change: transform, z-index;
-    z-index: 50;
 
     ${media.m`
       transform-origin: 0 50%;
     `}
   }
+`;
+
+const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const Title = styled.h3`
@@ -83,19 +85,18 @@ export default class extends Component {
   }
   render() {
     return (
-      <div>
+      <Layout>
         {this.props.artworks.map((artwork, key) => (
           <Artwork key={key}>
-            <ImageContainer
-              onClick={() => this.zoom(key)}
-              style={{ zIndex: this.state.zoomed === key ? 100 : 0 }}
-            >
+            <ImageContainer onClick={() => this.zoom(key)}>
               <img
                 src={artwork.image}
                 alt={`${artwork.title} © ${this.props.creator} ${artwork.year}`}
                 style={{
                   cursor: `zoom-${this.state.zoomed === key ? 'out' : 'in'}`,
                   transform: `scale(${this.state.zoomed === key ? 2 : 1})`,
+                  transition: this.state.zoomed === key ? zoomedInTransition : zoomedOutTransition,
+                  zIndex: this.state.zoomed === key ? 50 : 1,
                 }}
               />
             </ImageContainer>
@@ -103,7 +104,7 @@ export default class extends Component {
             <Year>{artwork.year}</Year>
           </Artwork>
         ))}
-      </div>
+      </Layout>
     );
   }
 }
