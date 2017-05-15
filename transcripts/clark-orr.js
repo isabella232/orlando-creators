@@ -59,7 +59,7 @@ export default `
     Yeah! What’s crazy is we have a lot of them and right now we’re starting to
     learn that and a lot of people are realizing if you want to see something, and
     be a part of something, you gotta do it on your own. There’s a gold
-    rush here now and it’s inspiring. I like being a part it.
+    rush here now and it’s inspiring. I like being a part of it.
   </p>
   <h2>What do you find exciting about some of the work being done in Orlando?</h2>
   <p>
