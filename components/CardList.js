@@ -159,6 +159,7 @@ const ComingSoon = styled.div`
   padding-top: 56.25%;
   position: relative;
   user-select: none;
+
   div {
     font-size: 0.875em;
     font-weight: 700;
@@ -170,6 +171,7 @@ const ComingSoon = styled.div`
     text-transform: uppercase;
     top: 50%;
     transform: translate(-50%, -50%);
+
   }
   img {
     display: block;
@@ -210,7 +212,7 @@ const Play = styled.img`
 const Title = styled.h2`
   color: ${color.blue};
   font-family: ${typography.heading};
-  kont-size: 26px;
+  font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.03725em;
   line-height: 1.3;
@@ -219,9 +221,9 @@ const Title = styled.h2`
 
 const Subtitle = styled.h3`
   color: ${color.blueSS};
-  fontSize: 14px;
-  fontWeight: 700;
-  letterSpacing: 0.0625em;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
   line-height: 1.3;
   margin-bottom: 0;
   margin-top: 0;

@@ -14,8 +14,8 @@ import { color, media, space } from '../styles/style-utils';
 
 const Container = styled.header`
   display: block;
-  paddingTop: 24px;
-  paddingBottom: 24px;
+  padding-top: ${space()};
+  padding-bottom: ${space()};
   overflow: hidden;
 `;
 
@@ -76,7 +76,7 @@ const Nav = styled.nav`
   ${media.s`
     justify-content: flex-end;
     margin: 0;
-    padding-right: 32px;
+    padding-right: ${space()};
     position: absolute;
     top: ${space()};
   `}

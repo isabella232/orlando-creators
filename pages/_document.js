@@ -1,13 +1,13 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-import styleSheet from 'styled-components/lib/models/StyleSheet';
+import flush from 'styled-jsx/server';
 
 import global from '../styles/global';
 
 export default class MyDocument extends Document {
-  static async getInitialProps({ renderPage }) {
+  static getInitialProps({ renderPage }) {
     const page = renderPage();
-    const style = styleSheet.rules().map(rule => rule.cssText).join('\n');
-    return { ...page, style };
+    const styles = flush();
+    return { ...page, styles };
   }
   loadGA() {
     return {
@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <style>{global}</style>
-          <style dangerouslySetInnerHTML={{ __html: this.props.style }} />
+          <style dangerouslySetInnerHTML={{ __html: this.props.styles }} />
         </Head>
         <body>
           <Main />

@@ -1,4 +1,4 @@
-import { color, media, typography } from './style-utils';
+import { color, typography } from './style-utils';
 
 export default `
 * {
@@ -33,38 +33,12 @@ body {
   perspective: 1px;
 }
 
-a {
-  color: #0ba7c7;
-  text-decoration: none;
-}
-
 main {
   margin: 0;
   min-height: 100vh;
   padding-bottom: 8em;
   position: relative;
   z-index: 10;
-}
-
-h1 {
-  color: ${color.blue};
-  font-family: ${typography.heading};
-  font-size: 40px;
-  font-weight: 800;
-  letter-spacing: 0.025em;
-  margin-bottom: 0;
-  margin-top: 0;
-
-  ${media.s`
-    font-size: 48px;
-  `}
-}
-
-p {
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 2em;
-  margin-top: 2em;
 }
 
 /* Hack */

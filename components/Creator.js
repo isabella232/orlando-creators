@@ -98,6 +98,9 @@ const Transcript = styled.div`
     color: ${color.gray};
     font-size: 15px;
     font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 2em;
+    margin-top: 2em;
   }
 `;
 

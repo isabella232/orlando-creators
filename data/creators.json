@@ -1,5 +1,30 @@
 [
   {
+    "added": "2016-06-16 05:00:00",
+    "color": "#71e3fb",
+    "color2": "#10A7C7",
+    "name": "Adam Grason",
+    "slug": "adam-grason",
+    "social": [
+      {
+        "type": "instagram",
+        "url": "https://instagram.com/adamgrason"
+      },
+      {
+        "type": "website",
+        "url": "http://www.studiograson.com"
+      },
+      {
+        "type": "twitter",
+        "url": "https://twitter.com/adamgrason"
+      }
+    ],
+    "title": "Independent Illustrator",
+    "description": "We interview Adam Grason about the emotional side of making images, and the responsibility artists have to produce lasting work that stands the test of time rather than being motivated by likes on social media.",
+    "quote": "I try to not worry about what's the fad right now or what's the current trend. I’m playing the long game with my art.",
+    "videoID": "z27CEJtFbhU"
+  },
+  {
     "added": "2016-05-10 05:00:00",
     "color": "#f89a1d",
     "color2": "#fb7a54",
