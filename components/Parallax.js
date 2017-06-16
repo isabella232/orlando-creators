@@ -32,7 +32,7 @@ const BackgroundContainer = styled.div`
   position: absolute;
   right: 0;
   top: 100vh;
-  transform: translateY(-50%) translateZ(-1px)
+  transform: translateY(-50%) translateZ(-1px);
   transform-origin: 50% 100%;
   transform-style: preserve-3d;
   transition: opacity 1000ms 500ms;
@@ -50,7 +50,7 @@ const SlideUp = keyframes`
 const Background = styled.div`
   animation: ${SlideUp} 1000ms 500ms ${animation.deceleration};
   animation-fill-mode: forwards;
-  background-image: url(/static/assets/orlando.svg);
+  background-image: url('/static/assets/orlando.svg');
   background-position: center bottom;
   background-size: 250% auto;
   height: 100%;
@@ -83,10 +83,13 @@ const Colophon = styled.div`
   transform: translateY(-100%);
   width: 100%;
   z-index: 200;
+`;
 
-  a {
-    color: ${color.blue};
-  }
+const Link = styled.a`
+  color: ${color.blue};
+  margin-left: 0.375em;
+  margin-right: 0.375em;
+  text-decoration: none;
 `;
 
 /**
@@ -125,9 +128,10 @@ export default class extends Component {
           <Background />
         </BackgroundContainer>
         <Colophon style={{ top: this.state.bodyHeight }}>
-          Made with 🍊 by <a href="http://madewithenvy.com" target="_blank"
-          rel="noopener">Envy</a> and <a href="http://macbethstudio.com"
-          target="_blank" rel="noopener">Macbeth Studio</a>
+          Made with 🍊 by
+          <Link href="http://madewithenvy.com" target="_blank" rel="noopener">Envy</Link>
+          and
+          <Link href="http://macbethstudio.com" target="_blank" rel="noopener">Macbeth Studio</Link>
         </Colophon>
       </Wrapper>
     );
