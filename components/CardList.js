@@ -82,6 +82,7 @@ const Card = styled.div`
   animation-fill-mode: forwards;
   animation-name: ${CardAnimation};
   animation-timing-function: ${animation.deceleration};
+  border-radius: ${space(0.5)};
   margin-bottom: 1em;
   overflow: hidden;
   padding-top: 56.25%;
@@ -152,7 +153,7 @@ const ComingSoon = styled.div`
   animation: ${FadeIn} 1500ms 750ms linear;
   animation-fill-mode: forwards;
   background-color: rgba(0,80,102,0.1);
-  border-radius: 8px;
+  border-radius: ${space(0.5)};
   height: 0;
   opacity: 0;
   overflow: hidden;

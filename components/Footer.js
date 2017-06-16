@@ -31,6 +31,10 @@ const Colophon = styled.div`
   text-align: center;
   text-transform: uppercase;
   z-index: 10;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export default class extends Component {

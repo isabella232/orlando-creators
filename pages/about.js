@@ -151,14 +151,18 @@ const PersonContainer = styled.div`
     padding-right: 0;
     padding-bottom: 10em;
   `}
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const Summary = styled.p`
   font-weight: 300;
   line-height: 1.5;
-  marginLeft: auto;
-  marginRight: auto;
-  maxWidth: 30em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 30em;
   text-align: left;
 `;
 

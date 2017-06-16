@@ -1,4 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 import flush from 'styled-jsx/server';
 
 import global from '../styles/global';
@@ -24,6 +25,10 @@ export default class MyDocument extends Document {
     return { __html: 'try{Typekit.load({ async: true });}catch(e){}' };
   }
   render() {
+    const sheet = new ServerStyleSheet();
+    const main = sheet.collectStyles(<Main />);
+    const styleTags = sheet.getStyleElement();
+
     return (
       <html>
         <Head>
@@ -33,9 +38,13 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <style>{global}</style>
           <style dangerouslySetInnerHTML={{ __html: this.props.styles }} />
+          {styleTags}
         </Head>
         <body>
-          <Main />
+          <div className="root">
+            {main}
+          </div>
+
           <NextScript />
           <script dangerouslySetInnerHTML={this.loadGA()} />
           <script src="https://use.typekit.net/xua7kmr.js" />

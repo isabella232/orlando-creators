@@ -15,7 +15,7 @@ const VideoContainer = styled.div`
   background-color: ${color.blueSS};
   height: 0;
   overflow: hidden;
-  paddingTop: 56.25%;
+  padding-top: 56.25%;
   position: relative;
   width: 100%;
 
