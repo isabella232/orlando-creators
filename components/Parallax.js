@@ -107,6 +107,9 @@ export default class extends Component {
   componentDidMount() {
     this.setHeight();
     window.addEventListener('resize', () => this.setHeight());
+    setTimeout(() => this.setHeight(), 3000);
+    setTimeout(() => this.setHeight(), 6000);
+    setTimeout(() => this.setHeight(), 12000);
   }
   componentDidUpdate() {
     this.setHeight();
