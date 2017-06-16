@@ -11,7 +11,7 @@ import ArtworkList from './ArtworkList';
 import Cell from './Cell';
 import Social from './Social';
 import Video from './Video';
-import { color, media, space } from '../styles/style-utils';
+import { color, media, space, typography } from '../styles/style-utils';
 
 /**
  * @section Styles
@@ -42,6 +42,19 @@ const Card = styled.div`
 
   ${media.s`
     padding: ${space(2)};
+  `}
+`;
+
+const Title = styled.h1`
+  color: ${color.blue};
+  font-family: ${typography.heading};
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 0;
+  margin-top: 0;
+
+  ${media.s`
+    font-size: 42px;
   `}
 `;
 
@@ -152,7 +165,7 @@ export default class extends Component {
         </Cell>
         <Cell>
           <Card>
-            <h1 itemProp="name">{this.props.creator.name}</h1>
+            <Title itemProp="name">{this.props.creator.name}</Title>
             <Quote>{this.props.creator.quote}</Quote>
             <ArtworkContainer>
               <ArtworkList creator={this.props.creator.name} artworks={this.props.artworks} />
