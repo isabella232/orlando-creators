@@ -14,25 +14,25 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-    "node": "8.1.2"
+    "node": "9.2.0"
   },
   "cacheDirectories": [
     "nextjs/node_modules"
   ],
   "dependencies": {
     "@mars/heroku-nextjs-build": "*",
-    "babel-loader": "^7.0.0",
-    "next": "^2.4.3",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "styled-components": "^2.1.0"
+    "babel-loader": "^7.1.2",
+    "next": "^4.1.4",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "styled-components": "^2.2.3"
   },
   "devDependencies": {
-    "eslint": "^3.19",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint": "^4.12.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.5.1",
     "find-up": "^2.1.0"
   },
   "repository": {
