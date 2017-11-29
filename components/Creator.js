@@ -2,9 +2,9 @@
  * Individual creator page
  */
 
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Head from 'next/head';
-import Link from 'next/link';
 import styled from 'styled-components';
 
 import ArtworkList from './ArtworkList';
@@ -143,50 +143,49 @@ const Footer = styled.div`
  * @section Template
  */
 
-export default class extends Component {
-  constructor(props) {
-    super(props);
-  }
-  setTranscript() {
-    return { __html: this.props.transcript };
-  }
-  render() {
-    return (
-      <div itemScope={true} itemType="https://schema.org/TVEpisode">
-        <meta itemProp="episodeNumber" content={this.props.episode} />
-        <meta itemProp="datePublished" content={this.props.creator.added} />
-        <meta itemProp="image" content={`http://orlandocreators.com/static/assets/${this.props.creator.slug}-preview.jpg`} />
-        <Head>
-          <meta type="og:image" content={`/static/assets/${this.props.creator.slug}-preview.jpg`} />
-          <meta type="twitter:image" content={`/static/assets/${this.props.creator.slug}-preview.jpg`} />
-        </Head>
-        <Cell large>
-          <Video src={`https://www.youtube.com/embed/${this.props.creator.videoID}?rel=0&color=white&modestbranding=1`} />
-        </Cell>
-        <Cell>
-          <Card>
-            <Title itemProp="name">{this.props.creator.name}</Title>
-            <Quote>{this.props.creator.quote}</Quote>
-            <ArtworkContainer>
-              <ArtworkList creator={this.props.creator.name} artworks={this.props.artworks} />
-            </ArtworkContainer>
-            <Transcript dangerouslySetInnerHTML={this.setTranscript()} />
-            <Footer itemProp="actor" itemScope itemType="https://schema.org/Person">
-              <h5 itemProp="name">{`Connect with ${this.props.creator.name}`}</h5>
-              <SocialContainer>
-                {this.props.creator.social.map((social, key) => (
-                  <Social
-                    key={key}
-                    name={this.props.creator.name}
-                    type={social.type}
-                    url={social.url}
-                  />
-                ))}
-              </SocialContainer>
-            </Footer>
-          </Card>
-        </Cell>
-      </div>
-    );
-  }
-}
+const Creator = props => (
+  <div itemScope={true} itemType="https://schema.org/TVEpisode">
+    <meta itemProp="episodeNumber" content={props.episode} />
+    <meta itemProp="datePublished" content={props.creator.added} />
+    <meta itemProp="image" content={`http://orlandocreators.com/static/assets/${props.creator.slug}-preview.jpg`} />
+    <Head>
+      <meta type="og:image" content={`/static/assets/${props.creator.slug}-preview.jpg`} />
+      <meta type="twitter:image" content={`/static/assets/${props.creator.slug}-preview.jpg`} />
+    </Head>
+    <Cell large>
+      <Video src={`https://www.youtube.com/embed/${props.creator.videoID}?rel=0&color=white&modestbranding=1`} />
+    </Cell>
+    <Cell>
+      <Card>
+        <Title itemProp="name">{props.creator.name}</Title>
+        <Quote>{props.creator.quote}</Quote>
+        <ArtworkContainer>
+          <ArtworkList creator={props.creator.name} artworks={props.artworks} />
+        </ArtworkContainer>
+        <Transcript dangerouslySetInnerHTML={{ __html: props.transcript }} />
+        <Footer itemProp="actor" itemScope itemType="https://schema.org/Person">
+          <h5 itemProp="name">{`Connect with ${props.creator.name}`}</h5>
+          <SocialContainer>
+            {props.creator.social.map((social, key) => (
+              <Social
+                key={key}
+                name={props.creator.name}
+                type={social.type}
+                url={social.url}
+              />
+            ))}
+          </SocialContainer>
+        </Footer>
+      </Card>
+    </Cell>
+  </div>
+);
+
+Creator.propTypes = {
+  artworks: PropTypes.array.isRequired,
+  creator: PropTypes.object.isRequired,
+  episode: PropTypes.number.isRequired,
+  transcript: PropTypes.string.isRequired,
+};
+
+export default Creator;

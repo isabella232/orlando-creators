@@ -2,7 +2,8 @@
  * Displays list of artworks on creator page
  */
 
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * @section Styles
@@ -68,7 +69,7 @@ const Year = styled.small`
  * @section Template
  */
 
-export default class extends Component {
+class ArtworkList extends React.Component {
   constructor(props) {
     super(props);
     this.zoom = this.zoom.bind(this);
@@ -107,3 +108,10 @@ export default class extends Component {
     );
   }
 }
+
+ArtworkList.propTypes = {
+  artworks: PropTypes.array.isRequired,
+  creator: PropTypes.string.isRequired,
+};
+
+export default ArtworkList;

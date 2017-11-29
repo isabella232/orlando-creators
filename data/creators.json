@@ -1,6 +1,35 @@
 [
   {
-    "added": "2016-06-16 05:00:00",
+    "added": "2017-11-31 05:00:00",
+    "color": "#85ffe9",
+    "color2": "#43D1B7",
+    "name": "Shauna Panczyszyn",
+    "slug": "shauna-panczyszyn",
+    "social": [
+      {
+        "type": "website",
+        "url": "http://www.shaunalynn.com"
+      },
+      {
+        "type": "dribbble",
+        "url": "https://dribbble.com/shaunalynn"
+      },
+      {
+        "type": "instagram",
+        "url": "https://www.instagram.com/shaunaparmesan/"
+      },
+      {
+        "type": "twitter",
+        "url": "https://twitter.com/shaunaparmesan"
+      }
+    ],
+    "title": "Independent Illustrator & Letterer",
+    "description": "We talk with Shauna about how history of design influences work today, going with the flow, and the tremendous effort it takes to be an independent artist.",
+    "quote": "I figure skate, and the second you think, you’re catching a toe pick and going down. That same thing goes into my lettering practice. … Don’t think about it. Let it happen because the muscle memory is there and it’s gonna happen naturally.",
+    "videoID": "qOdozoHLma8"
+  },
+  {
+    "added": "2017-06-16 05:00:00",
     "color": "#71e3fb",
     "color2": "#10A7C7",
     "name": "Adam Grason",
@@ -29,7 +58,7 @@
     "videoID": "z27CEJtFbhU"
   },
   {
-    "added": "2016-05-10 05:00:00",
+    "added": "2017-05-10 05:00:00",
     "color": "#f89a1d",
     "color2": "#fb7a54",
     "name": "Patrick Michael Chin",
@@ -54,7 +83,7 @@
     "videoID": "4SHMOZO1KFQ"
   },
   {
-    "added": "2016-04-10 05:00:00",
+    "added": "2017-04-10 05:00:00",
     "color": "#85ffe9",
     "color2": "#43D1B7",
     "name": "Ashley Heafy",
@@ -83,7 +112,7 @@
     "videoID": "q0L6mTh0jHc"
   },
   {
-    "added": "2016-03-13 05:00:00",
+    "added": "2017-03-13 05:00:00",
     "color": "#f89a1d",
     "color2": "#fb7a54",
     "name": "Clark Orr",

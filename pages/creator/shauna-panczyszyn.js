@@ -5,12 +5,12 @@ import Header from '../../components/Header';
 import Creator from '../../components/Creator';
 import Parallax from '../../components/Parallax';
 
-import artworks from '../../artworks/patrick-michael-chin';
-import transcript from '../../transcripts/patrick-michael-chin';
+import artworks from '../../artworks/shauna-panczyszyn';
+import transcript from '../../transcripts/shauna-panczyszyn';
 import creators from '../../data/creators.json';
 
-const creator = creators.find(item => (item.slug === 'patrick-michael-chin'));
-const pageTitle = 'Patrick Michael Chin Interview (Episode 004)';
+const creator = creators.find(item => (item.slug === 'shauna-panczyszyn'));
+const pageTitle = 'Shauna Lynn Panczyszyn Interview (Episode 005)';
 
 export default class extends React.Component {
   constructor(props) {
@@ -63,7 +63,7 @@ export default class extends React.Component {
           <Header />
           <Creator
             creator={this.state.creator}
-            episode={5}
+            episode={6}
             transcript={this.state.transcript}
             artworks={this.state.artworks}
           />

@@ -268,7 +268,13 @@ export default class extends Component {
                     <Icon src={`/static/assets/${creator.slug}.png`} alt={creator.name} />
                   </PreviewContainer>
                   <VideoContainer color={creator.color2}>
-                    <Video innerRef={video => this.videos[key] = video} loop={true} preload="auto">
+                    <Video
+                      innerRef={video => this.videos[key] = video}
+                      loop="true"
+                      muted
+                      playsInline
+                      preload="auto"
+                    >
                       <source src={`/static/assets/${creator.slug}.mp4`} type="video/mp4" />
                     </Video>
                     <Icon src={`/static/assets/${creator.slug}.gif`} alt={creator.name} />
@@ -281,14 +287,6 @@ export default class extends Component {
             </Link>
           </Column>
         ))}
-        <Column>
-          <ComingSoon>
-            <div>
-              <img src="/static/assets/alarm.svg" role="presentation" />
-              Coming soon!
-            </div>
-          </ComingSoon>
-        </Column>
       </Container>
     );
   }

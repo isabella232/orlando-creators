@@ -28,18 +28,16 @@ const VideoContainer = styled.div`
   }
 `;
 
-export default class extends Component {
-  render() {
-    return (
-      <VideoContainer>
-        <iframe
-          src={this.props.src}
-          width="560"
-          height="315"
-          frameBorder="0"
-          allowFullScreen
-        />
-      </VideoContainer>
-    );
-  }
-}
+const Video = props => (
+  <VideoContainer>
+    <iframe
+      src={props.src}
+      width="560"
+      height="315"
+      frameBorder="0"
+      allowFullScreen
+    />
+  </VideoContainer>
+);
+
+export default Video;
