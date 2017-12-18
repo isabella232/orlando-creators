@@ -1,8 +1,8 @@
-import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
-import flush from 'styled-jsx/server';
+import Document, { Head, Main, NextScript } from "next/document";
+import { ServerStyleSheet } from "styled-components";
+import flush from "styled-jsx/server";
 
-import global from '../styles/global';
+import global from "../styles/global";
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -18,11 +18,8 @@ export default class MyDocument extends Document {
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
         ga('create', 'UA-89719578-1', 'auto');
-        ga('send', 'pageview');`,
+        ga('send', 'pageview');`
     };
-  }
-  loadTypekit() {
-    return { __html: 'try{Typekit.load({ async: true });}catch(e){}' };
   }
   render() {
     const sheet = new ServerStyleSheet();
@@ -34,6 +31,7 @@ export default class MyDocument extends Document {
         <Head>
           <title>Orlando Creators</title>
           <link rel="shortcut icon" href="/static/favicon.ico" />
+          <link rel="stylesheet" href="https://use.typekit.net/ylt5sad.css" />
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <style>{global}</style>
@@ -41,14 +39,10 @@ export default class MyDocument extends Document {
           {styleTags}
         </Head>
         <body>
-          <div className="root">
-            {main}
-          </div>
+          <div className="root">{main}</div>
 
           <NextScript />
           <script dangerouslySetInnerHTML={this.loadGA()} />
-          <script src="https://use.typekit.net/xua7kmr.js" />
-          <script dangerouslySetInnerHTML={this.loadTypekit()} />
         </body>
       </html>
     );

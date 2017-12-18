@@ -14,7 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-    "node": "9.2.0"
+    "node": "9.3.0"
   },
   "cacheDirectories": [
     "nextjs/node_modules"
@@ -22,7 +22,7 @@
   "dependencies": {
     "@mars/heroku-nextjs-build": "*",
     "babel-loader": "^7.1.2",
-    "next": "^4.1.4",
+    "next": "^4.2.1",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
